@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>MedSurg Patient Deterioration Burden Calculator</title>
+
+    <script src="https://kit.fontawesome.com/17c3a500a8.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css"
+        integrity="sha512-uvXdJud8WaOlQFjlz9B15Yy2Au/bMAvz79F7Xa6OakCl2jvQPdHD0hb3dEqZRdSwG4/sknePXlE7GiarwA/9Wg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp" ng-controller="myCtrl as vm" ng-cloak>
+
+    <main class="flex-shrink-0 d-print-inline-block">
+        <h1 class="visually-hidden">Cepheid - GeneXpert</h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <span class="float-end">
+                <button type="button" class="btn btn-secondary btn-sm text-white" ng-click="vm.resetDefault()">Reset to
+                    default
+                </button>
+                <div class="btn-group">
+                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span class="fi fi-{{vm.countryCode}}"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#" ng-click="vm.setLocaleAndLanguage('en-us')"><span
+                                    class="fi fi-us"></span> English </a></li>
+                        <li><a class="dropdown-item" href="#" ng-click="vm.setLocaleAndLanguage('pt-br')"><span
+                                    class="fi fi-br"></span> Portuguese</a></li>
+                    </ul>
+                </div>
+            </span>
+            <h3 class="pb-0">MedSurg Patient Deterioration Burden Calculator</h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="card shadow mb-4 pb-2">
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-4 col-sm-6">
+                            <label for="B2" class="form-label">{{'LABELS.B2' | translate}}
+                            </label>
+                            <div class="input-group">
+                                <input type="text" class="form-control text-center" id="B2" ng-model="vm.model.B2"
+                                    format digits="0" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label for="B5" class="form-label">{{'LABELS.B5' | translate}}
+                            </label>
+                            <div class="input-group">
+                                <input type="text" class="form-control text-center" id="B5" ng-model="vm.model.B5"
+                                    format digits="1" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <label for="B8" class="form-label">{{'LABELS.B8' | translate}}</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control text-center" id="B8" ng-model="vm.model.B8" />
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 h-100 mt-auto">
+                            <label for="B3" class="form-label">Occupancy rate (%)
+                            </label>
+                            <div class="input-group input-group-sm">
+                                <input type="range" class="form-control form-control-sm form-range" id="B3" max="100"
+                                    step=".1" ng-model="vm.model.B3">
+                                <label class="input-group-text small">{{vm.model.B3 | number : 1 }}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mt-auto">
+                            <label for="B4" class="form-label">Patient deterioration rate (%)
+                            </label>
+                            <div class="input-group input-group-sm">
+                                <input type="range" class="form-control form-control-sm form-range" id="B4" max="25"
+                                    step=".2" ng-model="vm.model.B4">
+                                <label class="input-group-text small">{{vm.model.B4 | number : 1 }}%</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 h-100">
+                            <label for="B9" class="form-label">Increased LOS directly due to patient deterioration
+                                (days)</label>
+                            <div class="input-group input-group-sm">
+                                <input type="range" class="form-control form-control-sm form-range" id="B9" max="20"
+                                    step=".1" ng-model="vm.model.B9">
+                                <label class="input-group-text small">{{vm.model.B9 | number : 1 }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card shadow h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="feature-icon bg-warning text-dark flex-shrink-0 me-3">
+                                <i class="fa-solid fa-bed"></i>
+                            </div>
+                            <div class="w-100 text-end">
+                                <h1>{{vm.model.B14 | number : 0}}</h1>
+                                <p class="fs-5">Annual Patient Deterioration cases.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="feature-icon bg-warning text-dark flex-shrink-0 me-3">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                            </div>
+                            <div class="text-end w-100">
+                                <h1>{{vm.model.B17 | currency : $locale.NUMBER_FORMATS.CURRENCY_SYM :0}}</h1>
+                                <p class="fs-5">Annual Patient Deterioration Direct Costs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="card shadow h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="feature-icon bg-warning text-dark flex-shrink-0 me-3">
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div class="text-end w-100">
+                                <h1>{{vm.model.B20 | number }}</h1>
+                                <p class="fs-5">Increased Annual LOS due to Patient Deterioration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="feature-icon bg-warning text-dark flex-shrink-0 me-3">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div class="text-end w-100">
+                                <h1>{{vm.model.B12 | number}}</h1>
+                                <p class="fs-5">Projected Annual Rate of MedSurg Code Blues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-cols card shadow mb-4">
+                <div class="card-body">
+                    <h5 class="mb-3">Disclaimer
+                    </h5>
+                    <p class="card-text small text-muted">
+                        This calculator is intended to be used only for the purpose of assessing and demonstrating
+                        potential cost savings ranges under normalized hospital cost conditions. The results and
+                        outcomes are estimations only and should not be interpreted as a guarantee or warranty of
+                        similar results. It does not suggest a definitive review of actual costs and savings incurred in
+                        a hospital. Savings are estimates only and specific to the individual case. Savings may not be
+                        typical and may vary.
+                    </p>
+                </div>
+            </div>
+            <div class="row-cols card shadow mb-4">
+                <div class="card-body">
+                    <h5 class="mb-3">References</h5>
+                    <div class="card-text small">
+                        <p>
+                            (1) {{'REFERENCES.1' | translate}}
+                        </p>
+                        <p>
+                            (2) {{'REFERENCES.2' | translate}}
+                        </p>
+                        <p>
+                            (3) {{'REFERENCES.3' | translate}}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto d-print-table" id="footer">
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container align-items-center py-3 text-center" style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser usado apenas com o propósito de demonstrar possíveis resultados clínicos e
+                        econômicos em situações normais de atenção médica.</p>
+
+                    <p> Os resultados e valores são apenas estimativas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são específicos de um caso. Os resultados
+                        mostrados neste modelo podem variar de acordo com a situação.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">
+                        Desenvolvido por ValueConnected. 2022.
+                    </p>
+                    <button type="button" class="btn btn-secondary"
+                        ng-click="vm.addToSessionStorage('accepted','yes')">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="false">
+        <pre> {{vm.model | json}}</pre>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script src="./assets/chart.js"></script>
+    <script src="./assets/chartjs-plugin-datalabels.js"></script>
+    <script src="./assets/chartjs-plugin-doughnutlabel.min.js"></script>
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="./assets/angular.min.js"></script>
+    <script src="./assets/angular-translate.min.js"></script>
+    <script src="./assets/angular-sanitize.min.js"></script>
+    <script src="./assets/angular-translate-interpolation-messageformat.min.js"></script>
+    <script src="./assets/angular-translate-loader-partial.min.js"></script>
+    <script src="./assets/tmhDynamicLocale.min.js"></script>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>Oscillating Lung Expansion (OLE) Post-op Pulmonary Complications (PPC) ROI Model</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./index.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp" ng-controller="myCtrl as vm">
+
+    <main class="flex-shrink-0 d-print-inline-block">
+        <h1 class="visually-hidden">Cepheid - GeneXpert</h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <span class="float-end">
+                <button type="button" class="btn btn-sm text-white" style="background-color: #001871;"
+                    ng-click="vm.resetDefault()">Reset to default
+                </button>
+            </span>
+            <h3 class="pb-0" style="color: #5369E5;">Oscillating Lung Expansion (OLE)<br /> Post-op Pulmonary
+                Complications (PPC) ROI Model
+            </h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-fill card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#dados">Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#modelo">Results</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#charts">Charts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#referencias">References</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane active" id="dados" role="tabpanel" aria-labelledby="dados-tab"
+                        style="font-size: .8rem;">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 p-2">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Post-op data</h5>
+                                    <div class="row g-3 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1">
+                                                <label for="B1" class="col-sm-8 col-form-label text-end">Annual surgical
+                                                    volume
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="B1"
+                                                            ng-model="vm.model.B1" format="number" digits="0" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="B2" class="col-sm-8 col-form-label text-end">Patients at
+                                                    PPC risk <sup>1</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="B2"
+                                                            ng-model="vm.model.B2" format="number" digits="2" />
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="B3" class="col-sm-8 col-form-label text-end">Current
+                                                    patients at risk of PPC
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center form-control-plaintext"
+                                                            id="B3" ng-model="vm.model.B3" digits="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1">
+                                                <label for="C8" class="col-sm-8 col-form-label text-end">Hospital PPC
+                                                    Burden incidence <i class="bi bi-info-circle-fill "
+                                                        style="color:#59BEC9" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        title="The model operates correctly with a PPC rate incidence lower than the PPC at risk incidence"></i>
+                                                    <sup>1, 2, 4</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C8"
+                                                            ng-model="vm.model.C8" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="C9" class="col-sm-8 col-form-label text-end">Additional
+                                                    MedSurg LOS due to at least one PPC
+                                                    <sup>4</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C9"
+                                                            ng-model="vm.model.C9" format="number" digits="2">
+                                                        <span class="input-group-text">days</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="C10" class="col-sm-8 col-form-label text-end px-2">Post-op
+                                                    patient with at least 1 PPC transfer to ICU
+                                                    <sup>5</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C10"
+                                                            ng-model="vm.model.C10" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 p-2 ">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">ICU data</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I7" class="col-sm-8 col-form-label text-end">Additional ICU
+                                                    LOS due to at least one PPC
+                                                    <sup>3</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I7"
+                                                            ng-model="vm.model.I7" format="number" digits="2">
+                                                        <span class="input-group-text">days</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I8" class="col-sm-8 col-form-label text-end">Avg vent time
+                                                    for post-procedural high-risk patients
+                                                    <sup>5</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I8"
+                                                            ng-model="vm.model.I8" format="number" digits="2" />
+                                                        <span class="input-group-text">days</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I10" class="col-sm-8 col-form-label text-end">Admitted
+                                                    patients that require ventilation
+                                                    <sup>10</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I10"
+                                                            ng-model="vm.model.I10" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1">
+                                                <label for="C7" class="col-sm-8 col-form-label text-end">Planned ICU
+                                                    transfer rate <sup>1</sup></label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C7"
+                                                            ng-model="vm.model.C7" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 p-2">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Hospital Costs</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="C12" class="col-sm-8 form-label text-end">Avg MedSurg
+                                                    direct variable cost per day <sup>6, 7, 8</sup>
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C12"
+                                                            ng-model="vm.model.C12" format="number" digits="2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="C13" class="col-sm-8 col-form-label text-end">Avg ICU direct
+                                                    variable cost per day <sup>6, 7, 8</sup>
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="C13"
+                                                            ng-model="vm.model.C13" format="number" digits="2" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="C14" class="col-sm-8 col-form-label text-end">Avg direct
+                                                    variable cost per ventilator day <sup>9</sup>
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center " id="C14"
+                                                            ng-model="vm.model.C14" format="number" digits="2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6 col-md-12 p-2">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">OLE treatment costs</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I12" class="col-sm-8 col-form-label text-end">Cost of OLE
+                                                    circuit</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I12"
+                                                            ng-model="vm.model.I12" format="number" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I13" class="col-sm-8 col-form-label text-end">OLE
+                                                    circuit/patient</label>
+                                                <div class="col">
+                                                    <span>{{vm.model.I13}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I14" class="col-sm-8 col-form-label text-end">Cost of OLE
+                                                    device
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I14"
+                                                            ng-model="vm.model.I14" format="number" digits="0" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I15"
+                                                    class="col-sm-8 col-form-label text-end">Patients/device
+                                                    per month</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I15"
+                                                            ng-model="vm.model.I15" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I16" class="col-sm-8 col-form-label text-end">Annual
+                                                    warranty/device</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I16"
+                                                            ng-model="vm.model.I16" format="number" digits="2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-if="false">
+                            <pre> {{vm.model | json}}</pre>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="modelo" role="tabpanel" aria-labelledby="modelo-tab">
+                        <div class="row">
+                            <div class="col-5 border-end">
+                                <h5 class="mt-1"><u>Patients
+                                        treated with OLE therapy</u></h5>
+                                <div class="row-cols-1 d-print-inline-block">
+                                    <div class="mb-2">
+                                        <div class="input-group input-group-sm ">
+                                            <input type="range" class="form-control form-control-sm  form-range" id="I2"
+                                                step="1" ng-model="vm.model.I2">
+                                            <label class="input-group-text">{{vm.model.I2 | number :
+                                                1}}%</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1">
+                                    <span class="float-end"></span>
+                                    <label for="I18" class="form-label w-90">Number of required OLE devices:
+                                        {{(vm.model.I18) | number : 0 }}</label>
+                                </div>
+                                <div class="row-cols-1">
+                                    <span class="float-end"></span>
+                                    <label for="I19" class="form-label w-90">Annual number of required OLE circuits:
+                                        {{(vm.model.I19) | number : 0 }}</label>
+                                </div>
+                                <h5 class="mt-4"><u>OLE therapy</u></h5>
+
+                                <div class="row-cols-1 d-print-inline-block">
+                                    <label for="N8" class="form-label form-label-sm float-start fw-bold">Reduction
+                                        of hospital PPC Burden incidence <sup>5</sup>
+                                    </label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="range" class="form-control form-control-sm form-range" id="N8"
+                                            step="1" ng-model="vm.model.N8">
+                                        <label class="input-group-text">{{vm.model.N8 | number : 1
+                                            }}%</label>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1 mb-2 pb-2 border-bottom border-c-201547">
+                                    <span class="float-end"></span>
+                                    <label for="N14" class="form-label w-90">OLE Hospital PPC Burden incidence:
+                                        {{(vm.model.N14*100) | number : 1 }}%</label>
+                                </div>
+                                <div class="row-cols-1 mb-2">
+                                    <label for="N9" class="form-label fw-bold">Avg. reduction of add. MedSurg LOS for
+                                        high risk ASA patient
+                                        <sup>5</sup>
+                                    </label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control form-control-sm text-center" id="N9"
+                                            ng-model="vm.model.N9" format="number" digits="1" />
+                                        <label class="input-group-text">days</label>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1 mb-2 pb-2 border-bottom border-c-201547">
+                                    <label for="N15" class="form-label">OLE add. MedSurg LOS due to PPC:
+                                        {{vm.model.N15.toFixed(1)}} days
+                                    </label>
+                                </div>
+                                <div class="row-cols-1 d-print-inline-block">
+                                    <div class="mb-2">
+                                        <label for="N10" class="form-label fw-bold">Reduction of unplanned
+                                            ICU transfer rate <sup>5</sup></label>
+                                        <div class="input-group input-group-sm align-items-center">
+                                            <input type="range" class="form-control form-control-sm form-range" id="N10"
+                                                max="50" step="1" ng-model="vm.model.N10">
+                                            <label class="input-group-text">{{vm.model.N10 | number : 1
+                                                }}%</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1 mb-2 pb-2 border-bottom border-c-201547">
+                                    <label class="form-label">OLE unplanned ICU transfer rate:
+                                        {{(vm.model.N16*100).toFixed(2)}}%
+                                    </label>
+                                </div>
+                                <div class="row-cols-1 mb-2">
+                                    <label for="N11" class="form-label fw-bold">Avg. reduction of add. ICU LOS for high
+                                        risk ASA patient
+                                        <sup>5</sup>
+                                    </label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control text-center" id="N11"
+                                            ng-model="vm.model.N11" format="number" digits="1" />
+                                        <label class="input-group-text">days</label>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1 mb-2 pb-2 border-bottom border-c-201547">
+                                    <label for="N16" class="form-label">OLE Additional ICU LOS due to PPC:
+                                        {{(vm.model.N16*100).toFixed(2)}} days
+                                    </label>
+                                </div>
+                                <div class="row-cols-1 mb-2">
+                                    <label for="N12" class="form-label fw-bold">Reduction of average ventilation
+                                        time <sup>5</sup>
+                                    </label>
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control text-center" id="N12"
+                                            ng-model="vm.model.N12" format="number" digits="1" />
+                                        <span class="input-group-text">days</span>
+                                    </div>
+                                </div>
+                                <div class="row-cols-1">
+                                    <label for="N17" class="form-label">OLE Average ventilation time:
+                                        {{vm.model.N17.toFixed(2)}} days
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="row-cols-1">
+                                    <div class="d-print-inline-block mb-4">
+                                        <div class="p-2 w-100 h-100 text-center" style="min-width: 500px;">
+                                            <canvas class="" id="myChart" height="400" width="400"></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="row-cols-1 justify-content-center text-center px-3"
+                                        style="color: #001871 !important; font-size: .8rem;">
+                                        <p>
+                                            Potential additional annual admissions based on an average hospital
+                                            length-of-stay of 4.7 days:
+                                            {{vm.model.B110}}
+                                        </p>
+                                        <p>
+                                            Potential additional annual ICU admissions based on an average ICU
+                                            length-of-stay of 3.8 days:
+                                            {{vm.model.B111}}
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="charts" role="tabpanel" aria-labelledby="charts-tab">
+                        <div class="row px-4">
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart1" height="300" style="max-height: 300px;"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart2" height="350" style="max-height: 350px;"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart3" height="350"
+                                        style="max-height: 350px; width: 100% !important;"></canvas>
+                                </div>
+                                <div class="row mb-2 w-75 mx-auto">
+                                    <label for="E86" class="col-sm-6 col-form-label text-center">NPV Discount
+                                        Rate</label>
+                                    <div class="col">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm text-center" id="E86"
+                                                ng-model="vm.model.E86" format="number" digits="1" />
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-2 w-50 mx-auto">
+                                    <button type="button" class="btn btn-secondary"
+                                        ng-click="vm.isNpvTableVisible=!vm.isNpvTableVisible">{{vm.isNpvTableVisible?"Hide":"Show"}}
+                                        NPV Table</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12 d-print-inline-block mb-3">
+
+
+                                <div class="p-1 table-responsive" ng-show="vm.isNpvTableVisible">
+                                    <table class="table small">
+                                        <caption>5-year Net Present Value Summary </caption>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-end">Savings</th>
+                                            <th class="text-center">OLE materials </th>
+                                            <th class="text-end">Costs</th>
+                                            <th class="text-end">Net Gains</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 1</td>
+                                            <td class="text-end align-middle">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G114))}}
+                                                <i class="bi bi-info-circle-fill float-end" style="color:#59BEC9"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Year one savings are projected lower due to expectation that there will be a gradual increase monthly of best practice adoption of OLE use. After 10 months, the model assumes optimal savings will be achieved."></i>
+                                            </td>
+                                            <td class="text-center">
+                                                {{vm.model.H114}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I114))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J114))}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 2</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G115))}}</td>
+                                            <td class="text-center">
+                                                {{vm.model.H115}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I115))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J115))}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 3</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G116))}}</td>
+                                            <td class="text-center">
+                                                {{vm.model.H116}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I116))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J116))}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 4</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G117))}}</td>
+                                            <td class="text-center">
+                                                {{vm.model.H117}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I117))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J117))}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 5</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G118))}}</td>
+                                            <td class="text-center">
+                                                {{vm.model.H118}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I118))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J118))}}</td>
+                                        </tr>
+                                        <tr style="background-color:#98A4AE" class="fw-bold">
+                                            <td>Total</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.G119))}}</td>
+                                            <td class="text-center">{{vm.model.H119}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.I119))}}</td>
+                                            <td class="text-end">
+                                                {{vm.currencyFormat.format(Math.round(vm.model.J119))}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
+                        <div class="row">
+                            <div class="col-12 py-4 px-5" style="font-size: 0.8rem;">
+                                <h5 class="mb-3 text-center">REFERENCES</h5>
+                                <ol>
+                                    <li class="mb-2">LAS VEGAS investigators (2017). Epidemiology, practice of
+                                        ventilation and outcome for patients at increased risk of postoperative
+                                        pulmonary complications: LAS VEGAS - an observational study in 29 countries.
+                                        European journal of anaesthesiology, 34(8), 492–507.
+                                        https://doi.org/10.1097/EJA.0000000000000646
+                                    </li>
+                                    <li class="mb-2">Mazo, V., Sabaté, S., Canet, J., Gallart, L., de Abreu, M. G.,
+                                        Belda, J., Langeron, O., Hoeft, A., & Pelosi, P. (2014). Prospective external
+                                        validation of a predictive score for postoperative pulmonary complications.
+                                        Anesthesiology, 121(2), 219–231. https://doi.org/10.1097/ALN.0000000000000334
+                                    </li>
+                                    <li class="mb-2">Bartkowiak, B., Snyder, A. M., Benjamin, A., Schneider, A., Twu, N.
+                                        M., Churpek, M. M., Roggin, K. K., & Edelson, D. P. (2019). Validating the
+                                        Electronic Cardiac Arrest Risk Triage (eCART) Score for Risk Stratification of
+                                        Surgical Inpatients in the Postoperative Setting: Retrospective Cohort Study.
+                                        Annals of surgery, 269(6), 1059–1063.
+                                        https://doi.org/10.1097/SLA.0000000000002665
+                                    </li>
+                                    <li class="mb-2">Fernandez-Bustamante, A., Frendl, G., Sprung, J., Kor, D. J.,
+                                        Subramaniam, B., Martinez Ruiz, R., Lee, J. W., Henderson, W. G., Moss, A.,
+                                        Mehdiratta, N., Colwell, M. M., Bartels, K., Kolodzie, K., Giquel, J., & Vidal
+                                        Melo, M. F. (2017). Postoperative Pulmonary Complications, Early Mortality, and
+                                        Hospital Stay Following Noncardiothoracic Surgery: A Multicenter Study by the
+                                        Perioperative Research Network Investigators. JAMA surgery, 152(2), 157–166.
+                                        https://doi.org/10.1001/jamasurg.2016.4065
+                                    </li>
+                                    <li class="mb-2">Huynh, T. T., Liesching, T. N., Cereda, M., Lei, Y., Frazer, M. J.,
+                                        Nahouraii, M. R., & Diette, G. B. (2019). Efficacy of Oscillation and Lung
+                                        Expansion in Reducing Postoperative Pulmonary Complication. Journal of the
+                                        American College of Surgeons, 229(5), 458–466.e1.
+                                        https://doi.org/10.1016/j.jamcollsurg.2019.06.004
+                                    </li>
+                                    <li class="mb-2">Taheri, P. A., Butz, D. A., & Greenfield, L. J. (2000). Length of
+                                        stay has minimal impact on the cost of hospital admission. Journal of the
+                                        American College of Surgeons, 191(2), 123–130.
+                                        https://doi.org/10.1016/s1072-7515(00)00352-5
+                                    </li>
+                                    <li class="mb-2">Milbrandt, E. B., Kersten, A., Rahim, M. T., Dremsizov, T. T.,
+                                        Clermont, G., Cooper, L. M., Angus, D. C., & Linde-Zwirble, W. T. (2008). Growth
+                                        of intensive care unit resource use and its estimated cost in Medicare. Critical
+                                        care medicine, 36(9), 2504–2510. https://doi.org/10.1097/CCM.0b013e318183ef84
+                                    </li>
+                                    <li class="mb-2">Slight, S. P., Franz, C., Olugbile, M., Brown, H. V., Bates, D. W.,
+                                        & Zimlichman, E. (2014). The return on investment of implementing a continuous
+                                        monitoring system in general medical-surgical units. Critical care medicine,
+                                        42(8), 1862–1868. https://doi.org/10.1097/CCM.0000000000000340
+                                    </li>
+                                    <li class="mb-2">Bice, T., Cox, C. E., & Carson, S. S. (2013). Cost and health care
+                                        utilization in ARDS--different from other critical illness?. Seminars in
+                                        respiratory and critical care medicine, 34(4), 529–536.
+                                        https://doi.org/10.1055/s-0033-1351125
+                                    </li>
+                                    <li class="mb-2">Lilly, C. M., Zuckerman, I. H., Badawi, O., & Riker, R. R. (2011).
+                                        Benchmark data from more than 240,000 adults that reflect the current practice
+                                        of critical care in the United States. Chest, 140(5), 1232–1242.
+                                        https://doi.org/10.1378/chest.11-0718
+                                    </li>
+
+                                </ol>
+                                <div>
+                                    <pre ng-show="false">{{ vm.model | json}}</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto d-print-table" id="footer">
+
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container  py-3 " style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+            <span class="float-end">US-FLC188-230005 v1 1/23</span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser usado apenas com o propósito de demonstrar possíveis resultados clínicos e
+                        econômicos em situações normais de atenção médica.</p>
+
+                    <p> Os resultados e valores são apenas estimativas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são específicos de um caso. Os resultados
+                        mostrados neste modelo podem variar de acordo com a situação.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">
+                        Desenvolvido por ValueConnected. 2022.
+                    </p>
+                    <button type="button" class="btn btn-secondary"
+                        ng-click="vm.addToSessionStorage('accepted','yes')">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/jquery.min.js"></script>
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="./assets/chart.js"></script>
+    <script src="./assets/chartjs-plugin-datalabels.2.1.0.js"></script>
+    <script src="./assets/chartjs-plugin-doughnutlabel.min.js"></script>
+
+    <script src="./assets/angular.min.js"></script>
+
+    <script src="./index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-bs-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+body {
+    
+  background-color:#dbe2e9;
+  color: #000000;
+  font-family: 'Lab Grotesque', 'Century Gothic', sans-serif;
+}
+
+.popover, .tooltip {
+  font-family: 'Lab Grotesque', 'Century Gothic', sans-serif;
+}
+
+.slider-tick.in-selection {
+  background-image: none;
+  background-color: #59bec9;
+}
+
+.btn-danger {
+  background-color: #ef4a81;
+  border-color: #ef4a81;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: #ef4a81;
+  border-color: #ef4a81;
+}
+
+.btn-danger.active.focus, .btn-danger.active:focus, .btn-danger.active:hover, .btn-danger:active.focus, .btn-danger:active:focus, .btn-danger:active:hover, .open>.dropdown-toggle.btn-danger.focus, .open>.dropdown-toggle.btn-danger:focus, .open>.dropdown-toggle.btn-danger:hover {
+  background-color: #ef4a81;
+  border-color: #ef4a81;
+  outline: none;
+}
+
+.btn-danger.active, .btn-danger:active, .open>.dropdown-toggle.btn-danger {
+  background-color: #ef4a81;
+  border-color: #ef4a81;
+}
+
+.btn-danger.focus, .btn-danger:focus {
+  background-color: #ef4a81;
+  border-color: #ef4a81;
+  outline:none;
+}
+
+
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type=range].styled-slider {
+  height: 2.2em;
+  -webkit-appearance: none;
+}
+
+/*progress support*/
+input[type=range].styled-slider.slider-progress {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 1.5em + var(--ratio) * (100% - 1.5em));
+}
+
+input[type=range].styled-slider:focus {
+  outline: none;
+}
+
+/*webkit*/
+input[type=range].styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #201547;
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(1em * 0.5 - 1.5em * 0.5);
+}
+
+input[type=range].styled-slider::-webkit-slider-runnable-track {
+  height: 1em;
+  border: none;
+  border-radius: 0.4em;
+  background: #e5e5e5;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:hover {
+  background: #201547;
+}
+
+input[type=range].styled-slider:hover::-webkit-slider-runnable-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider::-webkit-slider-thumb:active {
+  background: #201547;
+}
+
+input[type=range].styled-slider:active::-webkit-slider-runnable-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+/*mozilla*/
+input[type=range].styled-slider::-moz-range-thumb {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #201547;
+  border: none;
+  box-shadow: 0 0 2px black;
+}
+
+input[type=range].styled-slider::-moz-range-track {
+  height: 1em;
+  border: none;
+  border-radius: 0.4em;
+  background: #e5e5e5;
+  box-shadow: none;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:hover {
+  background: #201547;
+}
+
+input[type=range].styled-slider:hover::-moz-range-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider::-moz-range-thumb:active {
+  background: #201547;
+}
+
+input[type=range].styled-slider:active::-moz-range-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress::-moz-range-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-moz-range-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress:active::-moz-range-track {
+  background: linear-gradient(#59bec9,#59bec9) 0/var(--sx) 100% no-repeat, #e5e5e5;
+}
+
+/*ms*/
+input[type=range].styled-slider::-ms-fill-upper {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-fill-lower {
+  background: transparent;
+  border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-thumb {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 1em;
+  background: #201547;
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-track {
+  height: 1em;
+  border-radius: 0.4em;
+  background: #e5e5e5;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-thumb:hover {
+  background: #201547;
+}
+
+input[type=range].styled-slider:hover::-ms-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider::-ms-thumb:active {
+  background: #201547;
+}
+
+input[type=range].styled-slider:active::-ms-track {
+  background: #e5e5e5;
+}
+
+input[type=range].styled-slider.slider-progress::-ms-fill-lower {
+  height: 1em;
+  border-radius: 0.4em 0 0 0.4em;
+  margin: -undefined 0 -undefined -undefined;
+  background: #59bec9;
+  border: none;
+  border-right-width: 0;
+}
+
+input[type=range].styled-slider.slider-progress:hover::-ms-fill-lower {
+  background: #59bec9;
+}
+
+input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
+  background: #59bec9;
+}

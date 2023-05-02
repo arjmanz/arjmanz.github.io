@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myCtrl as vm">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/fonts/font.css">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/custom-flat.css">
+  <title ng-bind-html="'GLOBAL.PageTitle' | translate">MedSurg Patient Deterioration Burden Calculator</title>
+</head>
+
+<body ng-cloak>
+
+  <div class="container" style="max-width: 1170px;" ng-cloak>
+    <div class="row my-2">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body mt-3">
+            <button id="reset_to_defaults" class="btn btn-danger btn-sm float-end" ng-click="vm.resetDefault()">Reset to
+              default</button>
+            <div class="card-title">
+              <h2 style="margin-bottom:20px;" ng-bind-html="'GLOBAL.Title' | translate">MedSurg Patient Deterioration
+                Burden Calculator</h2>
+              <p class="small" ng-bind-html="'GLOBAL.Instructions' | translate">
+                Fill in the fields below with your unique data to discover the estimated burden of Med/Surg patient
+                deterioration in your hospital.<br>
+                The burden calculator will update automatically upon entering your clinical data.
+              </p>
+            </div>
+            <div class="container-fluid" style="padding-left:0; padding-right:0;">
+              <form>
+                <div class="row mb-2 align-items-end h-100 g-3">
+
+                  <div class="col-sm-4 col-md-4 col-lg-2">
+                    <label class="fw-bold small" for="B2" ng-bind-html="'LABELS.B2' | translate">Average number of
+                      <br />staffed MedSurg beds</label>
+                    <div class="input-group ">
+                      <input id="B2" name="B2" type="text"
+                        class="form-control form-control-sm rounded-0 border border-dark" ng-model="vm.model.B2" />
+                      <button type="button" data-clear="B2"
+                        class="btn btn-outline-secondary rounded-0 border border-dark" ng-click="vm.model.B2=0"><span
+                          aria-hidden="true">&times;</span></button>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-2">
+                    <label class="fw-bold small" for="B5" ng-bind-html="'LABELS.B5' | translate">Average hospital
+                      LOS</label>
+                    <div class="input-group">
+                      <input id="B5" name="B5" type="text"
+                        class="form-control form-control-sm rounded-0 border border-dark" ng-model="vm.model.B5" />
+                      <button type="button" data-clear="B5"
+                        class="btn btn-outline-secondary rounded-0 border border-dark" ng-click="vm.model.B5=0"><span
+                          aria-hidden="true">&times;</span></button>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-2">
+                    <label class="fw-bold small" for="B6" ng-bind-html="'LABELS.B6' | translate">Average ICU LOS</label>
+                    <div class="input-group">
+                      <input id="B6" name="B6" type="text"
+                        class="form-control form-control-sm rounded-0 border border-dark" ng-model="vm.model.B6" />
+                      <button type="button" data-clear="B6"
+                        class="btn btn-outline-secondary rounded-0 border border-dark" ng-click="vm.model.B6=0"><span
+                          aria-hidden="true">&times;</span></button>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-3">
+                    <label class="fw-bold small" for="B9" ng-bind-html="'LABELS.B9' | translate">MedSurg Direct <br />
+                      Variable Cost per day</label>
+                    <div class="input-group">
+                      <span class="input-group-text rounded-0 border border-dark">{{vm.currencySymbol}}</span>
+                      <input id="B9" name="B9" type="text"
+                        class="form-control form-control-sm rounded-0 border border-dark" ng-model="vm.model.B9">
+                      <button type="button" data-clear="B9"
+                        class="btn btn-outline-secondary rounded-0 border border-dark" ng-click="vm.model.B9=0"><span
+                          aria-hidden="true">&times;</span></button>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-3">
+                    <label class="fw-bold small" for="B10" ng-bind-html="'LABELS.B10' | translate">Average ICU Direct
+                      <br />Variable Cost per
+                      day<span class="glyphicon glyphicon-info-sign pull-right" aria-hidden="true"
+                        style="color: #59bec9;margin-left: 5px;" data-toggle="popover" data-trigger="hover"
+                        data-placement="auto"
+                        data-content="Direct Variable Cost are those costs that increase as the volume of activities increases and decrease as the volume of activities decreases. Specifically in this example, the expenses directly related to each incremental hospitalization day caused by patient deterioration."></span></label>
+                    <div class="input-group">
+                      <span class="input-group-text rounded-0 border border-dark">{{vm.currencySymbol}}</span>
+                      <input id=B10 name="B10" type="text"
+                        class="form-control form-control-sm rounded-0 border border-dark" ng-model="vm.model.B10">
+                      <button type="button" data-clear="B10"
+                        class="btn btn-outline-secondary rounded-0 border border-dark" ng-click="vm.model.B10=0"><span
+                          aria-hidden="true">&times;</span></button>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row mt-2 g-4">
+                  <div class="col-sm-4 col-md-4 col-lg-6">
+
+                    <label for="B3" class="fw-bold small mb-0" ng-bind-html="'LABELS.B3' | translate">Occupancy
+                      rate&nbsp;(%)</label>
+                    <label class="float-end small fw-bold">{{vm.model.B3}}%</label>
+                    <input id="B3" name="B3" type="range" class="form-range styled-slider slider-progress" min="0"
+                      max="100" step="0.1" ng-model="vm.model.B3">
+                    <span class="float-start small">0%</span>
+                    <span class="float-end small">100%</span>
+
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-6">
+                    <label for="B4" class="fw-bold small mb-0" ng-bind-html="'LABELS.B4' | translate">Patient
+                      deterioration
+                      rate&nbsp;(%)</label>
+                    <label class="float-end small fw-bold">{{vm.model.B4}}%</label>
+                    <input id="B4" name="B4" type="range" class="form-range styled-slider slider-progress" min="5"
+                      max="25" step=".2" ng-model="vm.model.B4">
+                    <span class="float-start small">5%</span>
+                    <span class="float-end small">25%</span>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-6">
+                    <label for="B15" class="fw-bold small mb-0" ng-bind-html="'LABELS.B15' | translate">Unplanned ICU
+                      transfer rate due to patient
+                      deterioration</label>
+                    <label class="float-end small fw-bold">{{vm.model.B15}}%</label>
+                    <input id="B15" name="B15B9" type="range" class="form-range styled-slider slider-progress" min="1"
+                      max="100" step="0.1" ng-model="vm.model.B15">
+                    <span class="float-start small">0%</span>
+                    <span class="float-end small">100%</span>
+                  </div>
+
+                  <div class="col-sm-4 col-md-4 col-lg-6">
+                    <label for="B13" class="fw-bold small mb-0" ng-bind-html="'LABELS.B13' | translate">Increased LOS
+                      directly due to patient
+                      deterioration&nbsp;(days)</label>
+                    <label class="float-end small fw-bold">{{vm.model.B13}}%</label>
+                    <input id="B13" name="B13" type="range" class="form-range styled-slider slider-progress" min="1"
+                      max="20" step="0.1" ng-model="vm.model.B13">
+                    <span class="float-start small">1</span>
+                    <span class="float-end small">20</span>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-2 mb-2">
+      <div class="col-sm-12 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+
+            <img src="assets/images/cal-orange-ico.svg" alt="">
+            <div class="panel-info-box">
+              <div class="text-center">
+                <h1 id="H23">{{vm.model.H23 | number : 0}}</h1>
+                <h5 class="px-4" ng-bind-html="'LABELS.H23' | translate">Estimated increased LOS days
+                  due to Patient Deterioration</h5>
+                <div class="p-4" style="min-height: 300px; min-width: 300px;">
+                  <canvas class="" id="myChart1" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-sm-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <img src="assets/images/money-blue-ico.svg" alt="">
+            <div class="panel-info-box">
+              <div class="text-center">
+                <h1 id="D22">{{vm.currencySymbol}}{{vm.model.D22 | number : 0}}</h1>
+                <h5 id="A17" class="px-4" ng-bind-html="'LABELS.D22' | translate">Annual Patient Deterioration <br />
+                  Direct Costs</h5>
+                <div class="p-4" style="min-height: 300px; min-width: 300px;">
+                  <canvas class="" id="myChart2" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <img src="assets/images/bed-blue-ico.svg" alt="">
+            <div class="panel-info-box">
+              <div class="text-center">
+                <h1 id="B19">{{vm.model.B19}}</h1>
+                <h5 id="A20" class="px-4" ng-bind-html="'LABELS.B19' | translate">Increased Annual LOS due to Patient
+                  Deterioration</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6 col-sm-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <img src="assets/images/exclamation-ico.svg" alt="">
+            <div class="panel-info-box">
+              <div class="text-center">
+                <h1 id="B21">{{vm.model.B21}}</h1>
+                <h5 id="A12" class="px-4" ng-bind-html="'LABELS.B21' | translate">Projected Annual Rate of MedSurg Code
+                  Blues <span class="glyphicon glyphicon-info-sign" aria-hidden="true"
+                    style="color: #59bec9;margin-left: 5px;" data-toggle="popover" data-trigger="hover"
+                    data-placement="auto"
+                    data-content="Annual Rate of Code Blues estimated by multiplying the expected rate of Code Blues (0,389262%, as in Perman, SM et al., 2016) by the annual MedSurg admissions."></span>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row g-2 mb-2">
+
+      <div class="col-xs-12">
+        <div class="card panel-default2">
+          <div class="card-body small">
+            <h5 ng-bind-html="'LABELS.DisclaimerTitle' | translate">Disclaimer</h5>
+            <p ng-bind-html="'LABELS.DisclaimerText' | translate">
+              This calculator is intended to be used only for the purpose of assessing and demonstrating potential cost
+              savings ranges under normalized hospital cost conditions.
+              The results and outcomes are estimations only and should not be interpreted as a guarantee or warranty of
+              similar results. It does not suggest a definitive review of actual costs and savings incurred in a
+              hospital.
+              Savings are estimates only and specific to the individual case. Savings may not be typical and may vary.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="card panel-default2">
+          <div class="card-body small">
+
+            <h5 ng-bind-html="'LABELS.ReferencesTitle' | translate">References</h5>
+            <p ng-bind-html="'REFERENCES.1' | translate"></p>
+            <p ng-bind-html="'REFERENCES.2' | translate"></p>
+            <p ng-bind-html="'REFERENCES.3' | translate"></p>
+            <p ng-bind-html="'REFERENCES.4' | translate"></p>
+            <p ng-bind-html="'REFERENCES.5' | translate"></p>
+            <p ng-bind-html="'REFERENCES.6' | translate"></p>
+            <p ng-bind-html="'REFERENCES.7' | translate"></p>
+            <p ng-bind-html="'REFERENCES.8' | translate"></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./assets/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+  <script src="./assets/bootstrap.bundle.min.js"></script>
+  <script src="./assets/angular.min.js"></script>
+  <script src="./assets/angular-route.min.js"></script>
+  <script src="./assets/angular-translate.min.js"></script>
+  <script src="./assets/angular-sanitize.min.js"></script>
+  <script src="./assets/angular-translate-interpolation-messageformat.min.js"></script>
+  <script src="./assets/angular-translate-loader-partial.min.js"></script>
+  <script src="./assets/tmhDynamicLocale.min.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.min.js"
+    integrity="sha512-qw2bX9KUhi7HLuUloyRsvxRlWJvj0u0JWVegc5tf7qsw47T0pwXZIk1Kyc0utTH3NlrpHtLa4HYTVUyHBr9Ufg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="index.js"></script>
+
+</body>
+
+</html>

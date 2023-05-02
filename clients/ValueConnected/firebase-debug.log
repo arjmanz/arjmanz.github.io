@@ -1,0 +1,50 @@
+[debug] [2023-01-28T14:41:33.892Z] ----------------------------------------------------------------------
+[debug] [2023-01-28T14:41:33.893Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-01-28T14:41:33.893Z] CLI Version:   11.0.1
+[debug] [2023-01-28T14:41:33.893Z] Platform:      darwin
+[debug] [2023-01-28T14:41:33.893Z] Node Version:  v16.14.2
+[debug] [2023-01-28T14:41:33.896Z] Time:          Sat Jan 28 2023 22:41:33 GMT+0800 (Philippine Standard Time)
+[debug] [2023-01-28T14:41:33.896Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-01-28T14:41:33.898Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-01-28T14:41:33.935Z] > refreshing access token with scopes: []
+[debug] [2023-01-28T14:41:33.935Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2023-01-28T14:41:34.259Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sat, 28 Jan 2023 14:41:34 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2023-01-28T14:41:34.273Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/undefined [none]
+[debug] [2023-01-28T14:41:34.620Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-01-28T14:41:34.620Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-01-28T14:41:34.860Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/undefined 403
+[debug] [2023-01-28T14:41:34.860Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/undefined {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-01-28T14:41:34.860Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-01-28T14:41:35.164Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:47:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project undefined. Please make sure the project exists and your account has permission to access it.
+[debug] [2023-02-16T13:17:29.532Z] ----------------------------------------------------------------------
+[debug] [2023-02-16T13:17:29.533Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-02-16T13:17:29.533Z] CLI Version:   11.0.1
+[debug] [2023-02-16T13:17:29.533Z] Platform:      darwin
+[debug] [2023-02-16T13:17:29.533Z] Node Version:  v16.14.2
+[debug] [2023-02-16T13:17:29.537Z] Time:          Thu Feb 16 2023 21:17:29 GMT+0800 (Philippine Standard Time)
+[debug] [2023-02-16T13:17:29.537Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-16T13:17:29.538Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-02-16T13:17:29.576Z] > refreshing access token with scopes: []
+[debug] [2023-02-16T13:17:29.576Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2023-02-16T13:17:29.722Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Thu, 16 Feb 2023 13:17:29 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2023-02-16T13:17:29.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/undefined [none]
+[debug] [2023-02-16T13:17:30.022Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-02-16T13:17:30.022Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-02-16T13:17:30.179Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/undefined 403
+[debug] [2023-02-16T13:17:30.179Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/undefined {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-02-16T13:17:30.179Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-02-16T13:17:30.295Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:47:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project undefined. Please make sure the project exists and your account has permission to access it.

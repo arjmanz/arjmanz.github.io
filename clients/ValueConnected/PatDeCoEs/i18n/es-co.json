@@ -1,0 +1,38 @@
+{
+    "GLOBAL": {
+        "PageTitle": "Calculadora de carga del impact del deterioro clínico de pacientes en camas hospitalarias – Colombia",
+        "Title": "Calculadora de carga del impact del deterioro clínico de pacientes <br/>en camas hospitalarias – Colombia",
+        "Instructions": "Rellene los campos siguientes con sus datos para descubrir la carga estimada del deterioro clínico del paciente médico/quirúrgico en su hospital.<br/>La calculadora se actualizará automáticamente al introducir sus datos clínicos.",
+        "CurrencySymbol": "$"
+    },
+    "LABELS": {
+        "B2": "Número medio de camas <br/>hospitalarias en servicio",
+        "B3": "Tasa de ocupación (%)&nbsp;<sup>1</sup>",
+        "B4": "Tasa de deterioro clínico del paciente (%)&nbsp;<sup>4</sup>",
+        "B5": "Duración media de estancia hospitalaria (días)&nbsp;<sup>1</sup>",
+        "B6": "Duración media de estancia hospitalaria en UCI (días)&nbsp;<sup>1</sup>",
+        "B9": "Costo variable directo de camas <br/>hospitalarias por día &nbsp;<sup>2</sup>",
+        "B10": "Costo variable directo promedio de la UCI por día &nbsp;<sup>3</sup>",
+        "B11": "",
+        "B13": "Aumento de la estancia hospitalaria directamente debido <br/>al deterioro clínico del paciente (días) &nbsp;(days)&nbsp;<sup>5</sup>",
+        "B15": "Tasa de transferencia no planeada a la UCI debido <br/>al deterioro clínico del paciente&nbsp;<sup>4</sup>",
+        "B16": "",
+        "H23": "Aumento estimado de los días de estancia hospitalaria debido al deterioro clínico del paciente",
+        "D22": "Costos directos anuales del deterioro clínico del paciente",
+        "B19": "Aumento anual de estancia hospitalaria debido al deterioro clínico del paciente",
+        "B21": "Tasa anual proyectada de Código Azul en camas hospitalarias",
+        "DisclaimerTitle": "Advertencia",
+        "DisclaimerText": "Esta calculadora está diseñada para utilizarse únicamente con el fin de evaluar y demostrar reducción de costos en condiciones normales de costos hospitalarios. Los resultados son solamente estimaciones y no deben interpretarse como una garantía de resultados similares. Ella no sugiere una revisión definitiva de los costos reales y los ahorros incurridos en un hospital. Los ahorros son solamente estimaciones y específicos para este modelo. Los ahorros pueden no ser típicos y pueden variar.",
+        "ReferencesTitle": "Referencias"
+    },
+    "REFERENCES": {
+        "1": "(1) OECD (https://www.oecd-ilibrary.org/sites/e5a80353-en/index.html?itemId=/content/component/e5a80353-en)",
+        "2": "(2) 2017 costs; Fernandes Mercado, J et al. PMU6 ANALISIS DE COSTOS EN CUIDADO INTENSIVO Y CUIDADOS INTERMEDIOS DE UNA ASEGURADORA EN SALUD EN COLOMBIA. Value in Health Regional Issues, (2019), S56, 19",
+        "3": "(3) Costos de 2012: COP 295,816 en valores de 2022; SANABRIA, Mauricio et al . Frecuencia y costos de hospitalización en una población de pacientes en diálisis en Colombia. rev.fac.med., Bogotá , v. 60, n. 4, p. 293-301, Dec. 2012 . Available from . access on 22 Nov. 2022.",
+        "4": "(4) Costs de 2017: COP $1,446,041 en valores de 2022; Fernandes Mercado, J et al. PMU6 ANALISIS DE COSTOS EN CUIDADO INTENSIVO Y CUIDADOS INTERMEDIOS DE UNA ASEGURADORA EN SALUD EN COLOMBIA. Value in Health Regional Issues, (2019), S56, 19",
+        "5": "(5) Observatorio de Bogota. https://saludata.saludcapital.gov.co/osb/index.php/datos-de-salud/ofertas-de-servicios-de-salud/ocupacioncamas/",
+        "6": "(6) \"MONTENEGRO, S. M. S. L.; MIRANDA, C. H. Avaliação do desempenho do escore de alerta precoce modificado em hospital público brasileiro. Rev. Bras. Enferm. v. 72, n. 6, p. 1428- 1434, dez. 2019.\"",
+        "7": "(7) Gaspari et al. Predictors of prolonged hospital stay in a Comprehensive Stroke Unit. Rev. Latino-Am. Enfermagem 2019;27:e3197 (calculado como la diferencia entre la duración media de la estancia hospitalaria de los pacientes con complicaciones en comparación con los pacientes sin complicaciones)",
+        "8": ""
+    }
+}

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>GeneXpert</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./genexpert.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp">
+
+    <main class="flex-shrink-0 d-print-inline-block" ng-controller="myCtrl as vm">
+        <h1 class="visually-hidden">Cepheid - GeneXpert</h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <h3 class="pb-0 ">Análise de Impacto Orçamentário - GeneXpert®</h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-fill card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#dados">Dados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#pesquisa">Pesquisa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#referencias">Referências</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane active" id="dados" role="tabpanel" aria-labelledby="dados-tab">
+                        <div>
+                            <div class="row g-3 py-2 row-cols-1 row-cols">
+                                <div class="col-md-4 pe-5 ">
+                                    <div class=" align-text-top">
+                                        <label for="B1" class="form-label">Internações ao ano</label>
+                                        <input type="text" class="form-control" id="B1" ng-model="vm.model.B1"
+                                            format="number" digits="0">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mb-2">
+                                        <label for="C3" class="form-label">Pesquisas de vigilância (%)</label>
+                                        <span class="float-end">{{vm.model.C3 | number : 1 }}%</span>
+                                        <input type="range" class="form-range" id="C3" step=".1" ng-model="vm.model.C3">
+                                    </div>
+                                    <div class="mb-0">
+                                        <label for="C13" class="form-label">Índice de positividade (%)</label>
+                                        <span class="float-end">{{vm.model.C13 | number : 1 }}%</span>
+                                        <input type="range" class="form-range" id="C13" step=".1"
+                                            ng-model="vm.model.C13">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="mb-3 text-end">
+                                        <label for="customRange1" class="form-label">Testes de pesquisa
+                                            realizados</label><br />
+                                        <strong><span class="strong">{{vm.model.B4 | number : 0 }}</span></strong>
+                                    </div>
+                                    <div class="text-end">
+                                        <label for="customRange1" class="form-label">Resultados positivos</label><br />
+                                        <strong><span class="strong">{{vm.model.D13 | number : 0}}</span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4" />
+                            <div class="row g-4 row-cols-1 row-cols text-center">
+                                <div class="col-7 mx-auto ">
+                                    <form>
+                                        <div class="row mb-2">
+                                            <label for="B6" class="col-sm-6 col-form-label text-end">Cultura de
+                                                bactérias
+                                                (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B6"
+                                                        ng-model="vm.model.B6" format="number" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B7" class="col-sm-6 col-form-label text-end">Antibiograma
+                                                (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B7"
+                                                        ng-model="vm.model.B7" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B8" class="col-sm-6 col-form-label text-end">Custo teste
+                                                convencional (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B8"
+                                                        ng-model="vm.model.B8" format="number" disabled>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <label for="B10" class="col-sm-6 col-form-label text-end">Período de
+                                                isolamento (dias)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Dias</span>
+                                                    <input type="text" class="form-control text-center" id="B10"
+                                                        ng-model="vm.model.B10" format="number" digits="1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B12" class="col-sm-6 col-form-label text-end">Custo da
+                                                diária de isolamento (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B11"
+                                                        ng-model="vm.model.B11" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+
+                                            <label for="B11" class="col-sm-6 col-form-label text-end">Preço Xpert®
+                                                teste (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B12"
+                                                        ng-model="vm.model.B12" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="pesquisa" role="tabpanel" aria-labelledby="pesquisa-tab">
+                        <div class="row">
+                            <h5 class="text-center py-4">Grupo Xpert® testes - pré-internação</h5>
+                            <div class="col-md-6 d-print-inline-block">
+                                <div class="mb-4">
+                                    <label for="C3" class="form-label">Pesquisas realizadas com Xpert® testes
+                                        (%)</label>
+                                    <span class="float-end">{{vm.model.I1}}%</span>
+                                    <input type="range" class="form-range" id="I1" step="1" ng-model="vm.model.I1">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Total de pesquisas realizadas com Xpert® testes</label>
+                                    <span class="float-end">{{vm.model.L1 | number : 0}}</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Total de pesquisas por métodos convencionais</label>
+                                    <span class="float-end">{{vm.model.L2 | number : 0}}</span>
+                                </div>
+                                <div class="my-5 text-center ">
+                                    <label>Diárias de isolamento evitadas</label>
+                                    <h5 class="fs-4 text">{{vm.model.K3 | number : 0}}</h5>
+                                </div>
+                                <div class="my-4 text-center">
+                                    <label>Custos de diárias de isolamento evitados</label>
+                                    <h5 class="fs-4 text">R$ {{vm.model.K8 | number : 0}}</h5>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 ps-5 d-print-inline-block">
+                                <div class="pe-3">
+                                    <canvas class="" id="myChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
+                        <div class="row">
+                            <div class="col-12 py-5 px-5" style="font-size:.9rem">
+                                <h5 class="mb-3">Referências</h5>
+                                <p>(1) Dados baseados em entrevistas com profissionais médicos no Brasil, período de
+                                    Março
+                                    de 2022.
+                                </p>
+                                <p>(2) Dallacorte TS, Indras DM, Teixeira JJV, Peder LD, Silva CM. Prevalência e
+                                    perfil
+                                    de
+                                    sensibilidade antimicrobiana de bactérias isoladas de hemoculturas realizadas em
+                                    hospitais particulares, Rev Inst Adolfo Lutz. 2016 75:1702.
+                                </p>
+                                <p>(3) Valor de pagamento pelo Sistema Único de Saúde para procedimento
+                                    02.02.08.008-0
+                                    ""Cultura de bactérias para identificação"", SIGTAP SUS, pesquisado em Março
+                                    2022.
+                                </p>
+                                <p>(4) Valor de pagamento pelo Sistema Único de Saúde para procedimento
+                                    02.02.08.002-1
+                                    ""Antibiograma com concentração inibitória mínima"", SIGTAP SUS, pesquisado em
+                                    Março
+                                    2022.
+                                </p>
+                                <p>(5) Supremo Tribunal Federal, Instruções sobre taxas e diárias da tabela própria
+                                    para
+                                    convênios e credenciamentos do STF-MED, 2018."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto d-print-table" id="footer">
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container px-4 py-4" style="font-size: .85rem;">
+            <p>Este modelo deve ser utilizado apenas para o propósito de demonstrar potenciais resultados clínicos e
+                econômicos dentro de situações normais de cuidados em saúde.</p>
+            <p>Os resultados e valores são estimativas apenas e não podem ser interpretados como garantia de
+                resultados
+                similares. Este modelo não sugere uma revisão completa dos custos e resultados clínicos relevantes.
+            </p>
+            <p>Todos os resultados são estimativas gerais e não são referentes a casos específicos. Qualquer
+                resultado
+                demonstrado neste modelo pode variar de acordo com cada situação.</p>
+        </div>
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container align-items-center py-3 text-center" style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser utilizado apenas para o propósito de demonstrar potenciais resultados
+                        clínicos e econômicos dentro de situações normais de cuidados em saúde.</p>
+
+                    <p> Os resultados e valores são estimativas apenas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são referentes a casos específicos. Qualquer
+                        resultado demonstrado neste modelo pode variar de acordo com cada situação.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./assets/angular-locale_pt-br.js"></script>
+    <script src="./genexpert.js"></script>
+
+</body>
+
+</html>

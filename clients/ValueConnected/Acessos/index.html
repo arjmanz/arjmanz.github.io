@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>Análisis de Valor PowerPort - Admón QMT
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./index.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp" ng-controller="myCtrl as vm">
+
+    <main class="flex-shrink-0 d-print-inline-block">
+        <h1 class="visually-hidden">Análisis de Valor PowerPort </h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <span class="float-end visually-hidden">
+                <button type="button" class="btn btn-sm text-white" style="background-color: #001871;"
+                    ng-click="vm.resetDefault()">Reset to default
+                </button>
+            </span>
+            <h3 class="pb-0">Análisis de Valor PowerPort
+                <br />Admón QMT
+            </h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="row mb-2 ">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Ca Colon-Recto</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Ca Mama</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Ca Próstata</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Ca Pulmón</label>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-fill card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#dados">Datos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#Resultados">Resultados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#referencias">Referencias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane active" id="dados" role="tabpanel" aria-labelledby="dados-tab"
+                        style="font-size: .8rem;">
+                        <div class="my-3 text-center h6">Recursos de Instalación, Administración y Mantenimiento</div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-12">
+                                <div class="row g-2 mb-2">
+                                    <div class="col-4"></div>
+                                    <div class="col">
+                                        <div class="alert bg_brand_blue p-1 text-center h-100 d-flex align-items-center"
+                                            role="alert">
+                                            <span class="mx-auto">Periférico</span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="alert bg_brand_orange p-1 text-center h-100 d-flex align-items-center"
+                                            role="alert">
+                                            <span class="mx-auto">
+                                                PICC
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+
+                                        <div class="alert bg_brand_teal p-1 text-center h-100 d-flex align-items-center"
+                                            role="alert">
+                                            <span class="mx-auto">
+                                                Power Port
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Dispositivo principal
+                                        ($)</label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B15"
+                                                ng-model="vm.model.B15" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D15" ng-model="vm.model.D15" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E15"
+                                                ng-model="vm.model.E15" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Insumos de
+                                        mantenimiento ($)</label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B16"
+                                                ng-model="vm.model.B16" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D16" ng-model="vm.model.D16" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E16"
+                                                ng-model="vm.model.E16" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Derechos sala
+                                        instalación ($)
+                                    </label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B17"
+                                                ng-model="vm.model.B17" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D17" ng-model="vm.model.D17" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E17"
+                                                ng-model="vm.model.E17" format="number" digits="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Honorarios
+                                        profesionales ($) </label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B18"
+                                                ng-model="vm.model.B18" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D18" ng-model="vm.model.D18" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E18"
+                                                ng-model="vm.model.E18" format="number" digits="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Día estancia
+                                        hospitalaria ($)</label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B19"
+                                                ng-model="vm.model.B19" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D18" ng-model="vm.model.D19" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E19"
+                                                ng-model="vm.model.E19" format="number" digits="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Atenciones
+                                        ambulatorias ($)</label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B20"
+                                                ng-model="vm.model.B20" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D20" ng-model="vm.model.D20" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E20"
+                                                ng-model="vm.model.E20" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Exámenes adicionales
+                                        ($)
+                                    </label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B21"
+                                                ng-model="vm.model.B21" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D21" ng-model="vm.model.D21" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E21"
+                                                ng-model="vm.model.E21" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-2 mb-2">
+                                    <label class="col-4 col-form-label text-sm-end text-xs-start">Otros ($) </label>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="B22"
+                                                ng-model="vm.model.B22" format="number" digits="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center "
+                                                id="D22" ng-model="vm.model.D22" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text">$</span>
+                                            <input type="text" class="form-control form-control-sm text-center" id="E22"
+                                                ng-model="vm.model.E22" format="number" digits="0">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-3 text-center h6">Frecuencias por ciclo/uso</div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-4 col-form-label text-sm-end text-xs-start">Accesos por OMT (n)
+                            </label>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B25"
+                                        ng-model="vm.model.B25" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D25"
+                                        ng-model="vm.model.D25" format="number" digits="1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E25"
+                                        ng-model="vm.model.E25" format="number" digits="1">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-4 col-form-label text-sm-end text-xs-start">Días hospitalarios por esquema
+                                (n) </label>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B26"
+                                        ng-model="vm.model.B26" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D26"
+                                        ng-model="vm.model.D26" format="number" digits="1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E26"
+                                        ng-model="vm.model.E26" format="number" digits="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-4 col-form-label text-sm-end text-xs-start">Dtenciones amb por esquema (n)
+                            </label>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B27"
+                                        ng-model="vm.model.B27" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D27"
+                                        ng-model="vm.model.D27" format="number" digits="1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E27"
+                                        ng-model="vm.model.E27" format="number" digits="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-4 col-form-label text-sm-end text-xs-start">Exámenes adicionales
+                                (n)</label>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B28"
+                                        ng-model="vm.model.B28" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D28"
+                                        ng-model="vm.model.D28" format="number" digits="1">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E28"
+                                        ng-model="vm.model.E28" format="number" digits="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-3 text-center h6">Complicaciones</div>
+                        <div class="row g-2 mb-2">
+                            <div class="col-2"></div>
+                            <div class="col-2">
+                                <div class="alert alert-secondary p-1 text-center h-100 d-flex align-items-center"
+                                    role="alert">
+                                    <span class="mx-auto">Costos ($)</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="alert bg_brand_blue p-1 text-center h-100 d-flex align-items-center"
+                                    role="alert">
+                                    <span class="mx-auto">Periférico</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="alert bg_brand_orange p-1 text-center h-100 d-flex align-items-center"
+                                    role="alert">
+                                    <span class="mx-auto">
+                                        PICC
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col">
+
+                                <div class="alert bg_brand_teal p-1 text-center h-100 d-flex align-items-center"
+                                    role="alert">
+                                    <span class="mx-auto">
+                                        Power Port
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-2 col-form-label text-sm-end text-xs-start">Extravasación
+                            </label>
+                            <div class="col-2">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="F32"
+                                        ng-model="vm.model.F32" format="number" digits="1" />
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B32"
+                                        ng-model="vm.model.B32" format="number" digits="1" />
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D32"
+                                        ng-model="vm.model.D32" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E32"
+                                        ng-model="vm.model.E32" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-2 col-form-label text-sm-end text-xs-start">Trombosis
+                            </label>
+                            <div class="col-2">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="F33"
+                                        ng-model="vm.model.F33" format="number" digits="1" />
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B33"
+                                        ng-model="vm.model.B33" format="number" digits="1" />
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D33"
+                                        ng-model="vm.model.D33" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E33"
+                                        ng-model="vm.model.E33" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-2 col-form-label text-sm-end text-xs-start">Infección
+                            </label>
+                            <div class="col-2">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="F34"
+                                        ng-model="vm.model.F34" format="number" digits="1" />
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B34"
+                                        ng-model="vm.model.B34" format="number" digits="1" />
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D34"
+                                        ng-model="vm.model.D34" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E34"
+                                        ng-model="vm.model.E34" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <label class="col-2 col-form-label text-sm-end text-xs-start">Otro
+                            </label>
+                            <div class="col-2">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="F35"
+                                        ng-model="vm.model.F35" format="number" digits="1" />
+                                    <span class="input-group-text">$</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="B35"
+                                        ng-model="vm.model.B35" format="number" digits="1" />
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center " id="D35"
+                                        ng-model="vm.model.D35" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm float-start">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E35"
+                                        ng-model="vm.model.E35" format="number" digits="1">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="Resultados" role="tabpanel" aria-labelledby="resultados-tab">
+                        <div class="row g-2 mb-4 justify-content-end">
+                            <label class="col-2 col-form-label  align-self-end text-end">Período de análisis
+                            </label>
+                            <div class="col-4 align-self-end">
+                                <div class="input-group input-group-sm ">
+                                    <input type="range" min="1" max="24"
+                                        class="form-control form-control-sm  form-range" id="I35" step="1"
+                                        ng-model="vm.model.I35">
+                                    <label class="input-group-text">{{vm.model.I35 | number : 0}} meses</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-2">
+                            <div class="col-2"></div>
+                            <div class="col">
+                                <div class="alert bg_brand_blue p-1 text-center h-100 d-flex align-items-center"
+                                    style="font-size: .8rem;" role="alert">
+                                    <span class="align-middle  mx-auto">Periférico</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="alert bg_brand_orange p-1 text-center h-100 d-flex align-items-center"
+                                    style="font-size: .8rem;" role="alert">
+                                    <span class="align-middle mx-auto">
+                                        PICC
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col">
+
+                                <div class="alert bg_brand_teal p-1 text-center h-100 d-flex align-items-center"
+                                    style="font-size: .8rem;" role="alert">
+                                    <span class="align-middle  mx-auto">
+                                        Power Port
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="col-1 text-center">
+                                <div class="p-1 text-center h-100 d-flex align-items-center" style="font-size: .8rem;"
+                                    role="alert">
+                                    <span class="align-middle  mx-auto">
+                                        <label class="form-label">Total</label>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-1">
+                            <label class="col-2 col-form-label text-end ">Escenario actual </label>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+
+                                    <input type="text" class="form-control form-control-sm text-center" id="C39"
+                                        ng-model="vm.model.C39" format="number" digits="0" />
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+
+                                    <input type="text" class="form-control form-control-sm text-center " id="E39"
+                                        ng-model="vm.model.E39" format="number" digits="0">
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+
+                                    <input type="text" class="form-control form-control-sm text-center" id="G39"
+                                        ng-model="vm.model.G39" format="number" digits="0">
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col-1 text-center">
+                                <label class="form-label">{{vm.model.J39}}</label>
+                            </div>
+                        </div>
+                        <div class="row g-2 mb-1">
+                            <label class="col-2 col-form-label text-sm-end text-xs-start">Escenario Power Port</label>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm text-center" id="C40"
+                                        ng-model="vm.model.C40" format="number" digits="0" />
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm text-center " id="E40"
+                                        ng-model="vm.model.E40" format="number" digits="0">
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm text-center" id="G40"
+                                        ng-model="vm.model.G40" format="number" digits="0">
+                                    <span class="input-group-text">Pacientes/mes</span>
+                                </div>
+                            </div>
+                            <div class="col-1 text-center">
+                                <label class="form-label">{{vm.model.J40}}</label>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <div class="row g-5 mb-1" style="font-size: .80rem;">
+                            <div class="col-5">
+
+                                <table class="table table-sm caption-top">
+                                    <caption class="fw-bold text-dark">Impacto Financiero</caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-end">E. Actual</th>
+                                            <th class="text-end">E. Power Port</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Instalación ($)</td>
+                                            <td class="text-end">${{vm.model.C82 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.E82 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estancia hospitalaria ($)</td>
+                                            <td class="text-end">${{vm.model.C83 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.E83 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>At. ambulatoria y otros ($)</td>
+                                            <td class="text-end">${{vm.model.C84 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.E84 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Complicaciones ($)</td>
+                                            <td class="text-end">${{vm.model.C85 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.E85 | number :0 }}</td>
+                                        </tr>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td class="">Total ($)</td>
+                                            <td class="text-end">${{vm.model.C86 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.E86 | number :0 }}</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                </table>
+                            </div>
+                            <div class="col-7">
+                                <div class="p-1 mb-4" style="min-height: 300px; ">
+                                    <canvas class="" id="myChart1" height="300" style="max-height: 300px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-5 mb-1" style="font-size: .80rem;">
+                            <div class="col-5">
+
+                                <table class="table table-sm mb-4 caption-top">
+                                    <caption class="fw-bold text-dark">Complicaciones</caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-end"># Casos evitados</th>
+                                            <th class="text-end">Ahorros($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Extravasación</td>
+                                            <td class="text-end">{{vm.model.I83 | number :0 }}</td>
+                                            <td class="text-end">{{vm.model.J83 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Trombosis</td>
+                                            <td class="text-end">{{vm.model.I84 | number :0 }}</td>
+                                            <td class="text-end">{{vm.model.J84 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Infección</td>
+                                            <td class="text-end">{{vm.model.I85 | number :0 }}</td>
+                                            <td class="text-end">{{vm.model.J85 | number :0 }}</td>
+                                        </tr>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td>Otro</td>
+                                            <td class="text-end">{{vm.model.I86 | number :0 }}</td>
+                                            <td class="text-end">{{vm.model.J86 | number :0 }}</td>
+                                        </tr>
+                                    </tfoot>
+
+                                    <tbody>
+
+                                </table>
+                            </div>
+                            <div class="col-7">
+                                <div class="p-1 mb-4" style="min-height: 250px; min-width: 250px;">
+                                    <canvas class="" id="myChart2" height="250" style="max-height: 250px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-5 mb-1" style="font-size: .80rem;">
+                            <div class="col-5">
+
+                                <table class="table table-sm caption-top">
+                                    <caption class="fw-bold text-dark">Costos totales por Acceso</caption>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th class="text-end">E. Actual</th>
+                                            <th class="text-end">E. Power Port</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Periférico</td>
+                                            <td class="text-end">${{vm.model.I91 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.J91 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PICC</td>
+                                            <td class="text-end">${{vm.model.I92 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.J92 | number :0 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Power Port</td>
+                                            <td class="text-end">${{vm.model.I93 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.J93 | number :0 }}</td>
+                                        </tr>
+                                    <tfoot>
+                                        <tr class="fw-bold">
+                                            <td>Total ($)</td>
+                                            <td class="text-end">${{vm.model.I94 | number :0 }}</td>
+                                            <td class="text-end">${{vm.model.J94 | number :0 }}</td>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                </table>
+                            </div>
+                            <div class="col-7">
+                                <div class="p-1" style="min-height: 250px; min-width: 250px;">
+                                    <canvas class="" id="myChart3" height="250" style="max-height: 250px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
+                        <div class="row">
+                            <div class="col-12 py-4 px-5" style="font-size: 0.8rem;">
+                                <h5 class="mb-3 text-center">Referencias</h5>
+                                <ol>
+                                    <li>Freitas B, Steiner S, Bausback Y, Branzan D, Ulrich M, Bräunlich S, Schmidt A,
+                                        Scheinert D. Rotarex Mechanical Debulking in Acute and Subacute Arterial
+                                        Lesions: Single-Center Experience with 525 Patients. Angiology. 2017
+                                        Mar;68(3):233-241.
+                                    </li>
+                                    <li>
+                                        Wang Q, Zhu RM, Ren HL, Leng R, Zhang WD, Li CM. Combination of Percutaneous
+                                        Rotational Thrombectomy and Drug-Coated Balloon for Treatment of Femoropopliteal
+                                        Artery Nonembolic Occlusion: 12-Month Follow-up. J Vasc Interv Radiol. 2020
+                                        Oct;31(10):1661-1667.
+                                    </li>
+                                    <li>Latacz P, Simka M, Brzegowy P, Piwowarczyk M, Popiela T. Mechanical rotational
+                                        thrombectomy with Rotarex system augmented with drug-eluting balloon angioplasty
+                                        versus stenting for the treatment of acute thrombotic and critical limb
+                                        ischaemia in the femoropopliteal segment. Wideochir Inne Tech Maloinwazyjne.
+                                        2019 Apr;14(2):311-319
+                                    </li>
+                                    <li>Heller S, Lubanda JC, Varejka P, Chochola M, Prochazka P, Rucka D, Kuchynkova S,
+                                        Horakova J, Linhart A. Percutaneous Mechanical Thrombectomy Using Rotarex TMS
+                                        Device in Acute Limb Ischemia in Infrainguinal Occlusions. Biomed Res Int.
+                                        2017;2017:2362769.
+                                    </li>
+                                    <li>Loffroy R, Edriss N, Goyault G, Chabanier A, Pernes JM, Sauguet A, Touil M,
+                                        Woerly B, Pongas D, Chevallier O, Falvo N, Galland C, Midulla M, Garnier N,
+                                        Guenfoudi MP, Boulin M, Aho-Gléglé S, Bost S. Percutaneous mechanical
+                                        atherothrombectomy using the RotarexTMS device in peripheral artery in-stent
+                                        restenosis or occlusion: a French retrospective multicenter study on 128
+                                        patients. Quant Imaging Med Surg. 2020 Jan;10(1):283-293.
+                                    </li>
+                                    <li>Bosiers M, Deloose K, Callaert J, Peeters P, Verbist J, Van den Eynde W, Maene
+                                        L, Beelen R, Keirse K, Hendriks J, Wauters J. Investigating the RotarexTMS
+                                        Catheter in Femoropopliteal In-Stent Occlusion 6-Month Results in the Robinson
+                                        (Rotarex Belgian In-Stent Occlusion) Study. J Cardio Vasc Med 2019, 5: 1-10.
+                                    </li>
+                                    <li>Milnerowicz A, Milnerowicz A, Kuliczkowski W, Protasiewicz M. Rotational
+                                        Atherectomy Plus Drug-Coated Balloon Angioplasty for the Treatment of Total
+                                        In-Stent Occlusions in Iliac and Infrainguinal Arteries. J Endovasc Ther. 2019
+                                        Jun;26(3):316-321.
+                                    </li>
+                                    <li>Bulvas M, Sommerová Z, Vanek I, Weiss J. Prospective Single-Arm Trial of
+                                        Endovascular Mechanical Debulking as Initial Therapy in Patients With Acute and
+                                        Subacute Lower Limb Ischemia: One-Year Outcomes. J Endovasc Ther. 2019
+                                        Jun;26(3):291-301.
+                                    </li>
+                                    <li>Vorwerk D, Triebe S, Ziegler S, Ruppert V. Percutaneous Mechanical
+                                        Thromboembolectomy in Acute Lower Limb Ischemia. Cardiovasc Intervent Radiol.
+                                        2019 Feb;42(2):178-185.
+                                    </li>
+                                    <li>Liu J, Li T, Huang W, Zhao N, Liu H, Zhao H, Wang H. Percutaneous mechanical
+                                        thrombectomy using Rotarex catheter in peripheral artery occlusion diseases -
+                                        Experience from a single center. Vascular. 2019 Apr;27(2):199-203.
+                                    </li>
+                                    <li>Liang S, Zhou L, Ye K, Lu X. Limb Salvage After Percutaneous Mechanical
+                                        Thrombectomy in Patients with Acute Lower Limb Ischemia: A Retrospective
+                                        Analysis from Two Institutions. Ann Vasc Surg. 2019 Jul;58:151-159.
+                                    </li>
+                                    <li>Spiliopoulos S, Katsanos K, Fragkos G, Karnabatidis D, Siablis D. Treatment of
+                                        infrainguinal thromboembolic complications during peripheral endovascular
+                                        procedures with AngioJet rheolytic thrombectomy, intraoperative thrombolysis,
+                                        and selective stenting.Society for Vascular Surgery.
+                                        http://dx.doi.org/10.1016/j.jvs.2012.04.036.
+                                    </li>
+                                    <li>Melendez FJ, Hidalgo JM, Álvarez S, Sanin E, Echevarri S. Rheolytic mechanical
+                                        thrombectomy; In the new age for endovascular treatment in acute ischemia of
+                                        limbs. www.revistaintervencionismo.com. Intervencionismo. 2019;19(2):77-82.
+                                    </li>
+                                    <li>Escobar G, Burks D, Abate M, Faramawi M, Ali A, Lyons L, Moursi M, Smeds M. 2017
+                                        . Abstrac .Risk of Acute Kidney Injury after Percutaneous Pharmacomechanical
+                                        Thrombectomy Using AngioJet in Venous and Arterial Thrombosis.
+                                    </li>
+                                    <li>Düzgün A, Ilkeli E. Is Surgical Thrombo-Embolectomy in Acute Limb Ischemia Still
+                                        Advantageous in Patients More Than 65 Years of Age?. The Heart Surgery Forum
+                                        #2021-4157 24 (6), 2021 [Epub November 2021] doi: 10.1532/HSF98.20214157.
+                                    </li>
+                                    <li>Borioni R, Garofalo M, Albano P, Colagrande L, Seddio F, Buratta M, Giannetta P.
+                                        Thromboembolectomy with a Fogarty catheter. Our clinical experience.Minerva
+                                        Cardioangiol. 2000 Apr-May;48(4-5):111-6.
+                                    </li>
+                                    <li>Schweitzer D, Aguam A, Wilder J. Complications encountered during arterial
+                                        embolectomy with the Fogarty balloon catheter.Vasc Surg. 1976
+                                        May-Jun;10(3):144-56. doi: 10.1177/153857447601000305.
+                                    </li>
+                                    <li>Fanelli F, Cannavale A, Corona M, Lucatelli P, Wlderk A, Salvatori F.The
+                                        ""DEBELLUM""--lower limb multilevel treatment with drug eluting
+                                        balloon--randomized trial: 1-year results.J Cardiovasc Surg (Torino). 2014
+                                        Apr;55(2):207-16.
+                                    </li>
+                                    <li>Jaff M, Nelson T, Ferko N, Martinson M, Anderson L, Hollmann S.Endovascular
+                                        Interventions for Femoropopliteal Peripheral Artery Disease: A Network
+                                        Meta-Analysis of Current Technologies.J Vasc Interv Radiol. 2017
+                                        Dec;28(12):1617-1627.e1. doi: 10.1016/j.jvir.2017.08.003. Epub 2017 Oct 12.
+                                    </li>
+                                    <li>Fanelli F, Cannavale A, Boatta E, Corona M, Lucatelli P, Wlderk A, Cirelli C,
+                                        Salvatori F.Lower limb multilevel treatment with drug-eluting balloons: 6-month
+                                        results from the DEBELLUM randomized trial.J Endovasc Ther. 2012
+                                        Oct;19(5):571-80. doi: 10.1583/JEVT-12-3926MR.1.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer class="footer mt-auto d-print-table" id="footer">
+
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container  py-3 " style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+            <span class="float-end">US-FLC188-230005 v1 1/23</span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser usado apenas com o propósito de demonstrar possíveis resultados clínicos e
+                        econômicos em situações normais de atenção médica.</p>
+
+                    <p> Os resultados e valores são apenas estimativas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são específicos de um caso. Os resultados
+                        mostrados neste modelo podem variar de acordo com a situação.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">
+                        Desenvolvido por ValueConnected. 2022.
+                    </p>
+                    <button type="button" class="btn btn-secondary"
+                        ng-click="vm.addToSessionStorage('accepted','yes')">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/jquery.min.js"></script>
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="./assets/chart.js"></script>
+    <script src="./assets/chartjs-plugin-datalabels.2.1.0.js"></script>
+    <script src="./assets/chartjs-plugin-doughnutlabel.min.js"></script>
+
+    <script src="./assets/angular.min.js"></script>
+
+    <script src="./index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-bs-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1521 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>Modelo Rotarex - Isquemia Aguda
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./index.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp" ng-controller="myCtrl as vm">
+
+    <main class="flex-shrink-0 d-print-inline-block">
+        <h1 class="visually-hidden">Cepheid - GeneXpert</h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <span class="float-end visually-hidden">
+                <button type="button" class="btn btn-sm text-white" style="background-color: #001871;"
+                    ng-click="vm.resetDefault()">Reset to default
+                </button>
+            </span>
+            <h3 class="pb-0" style="color: #5369E5;">Modelo Rotarex
+                <br /> Isquemia Aguda
+            </h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-fill card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#dados">Datos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#modelo">Resultados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#referencias">Referencias</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane active" id="dados" role="tabpanel" aria-labelledby="dados-tab"
+                        style="font-size: .8rem;">
+                        <div class="row g-3 mb-4">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Trombectomía Mecánica <br />Percutánea (PMT) Rotarex
+                                    </h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D14" class="col-sm-7 col-form-label text-end">Costo
+                                                    dispositivo principal </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D14"
+                                                            ng-model="vm.model.D14" format="number" digits="2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D15" class="col-sm-7 col-form-label text-end">Dispositivos
+                                                    por procedimiento </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center form-control-plaintext"
+                                                            id="D15" ng-model="vm.model.D15" format="number"
+                                                            digits="2" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D16" class="col-sm-7 col-form-label text-end">Otros insumos
+
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center " id="D16"
+                                                            ng-model="vm.model.D16" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D17" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala hemodinamia </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D17"
+                                                            ng-model="vm.model.D17" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D18" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala intervencionismo </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D18"
+                                                            ng-model="vm.model.D18" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D19" class="col-sm-7 col-form-label text-end">Honorarios
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D19"
+                                                            ng-model="vm.model.D19" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D20" class="col-sm-7 col-form-label text-end">Tratamiento
+                                                    adyuvante </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D20"
+                                                            ng-model="vm.model.D20" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D21" class="col-sm-7 col-form-label text-end">Otros
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D21"
+                                                            ng-model="vm.model.D21" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D22" class="col-sm-8 col-form-label text-end fw-bold">Costo
+                                                    total
+                                                </label>
+                                                <div class="col">
+                                                    <div class="text-center fw-bold" id="D21">${{vm.model.D22 | number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D25" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D25"
+                                                            ng-model="vm.model.D25" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D26" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D26"
+                                                            ng-model="vm.model.D26" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D27" class="col-sm-7 col-form-label text-end">Sangrado mayor
+                                                    (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D27"
+                                                            ng-model="vm.model.D27" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D29" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D29"
+                                                            ng-model="vm.model.D29" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D30" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D30"
+                                                            ng-model="vm.model.D30" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D31" class="col-sm-7 col-form-label text-end">Estenosis
+                                                    residual
+                                                    posible reintervención</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D31"
+                                                            ng-model="vm.model.D31" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="D32" class="col-sm-7 col-form-label text-end">Sangrado
+                                                    mayor</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="D32"
+                                                            ng-model="vm.model.D32" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Otras Trombectomías<br />&nbsp;</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I14" class="col-sm-7 col-form-label text-end">Costo
+                                                    dispositivo principal </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I14"
+                                                            ng-model="vm.model.I14" format="number" digits="2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I15" class="col-sm-7 col-form-label text-end">Dispositivos
+                                                    por procedimiento </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center form-control-plaintext"
+                                                            id="I15" ng-model="vm.model.I15" format="number"
+                                                            digits="2" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I16" class="col-sm-7 col-form-label text-end">Otros insumos
+
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center " id="I16"
+                                                            ng-model="vm.model.I16" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I17" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala hemodinamia </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I17"
+                                                            ng-model="vm.model.I17" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I18" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala intervencionismo </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I18"
+                                                            ng-model="vm.model.I18" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I19" class="col-sm-7 col-form-label text-end">Honorarios
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I19"
+                                                            ng-model="vm.model.I19" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I20" class="col-sm-7 col-form-label text-end">Tratamiento
+                                                    adyuvante </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I20"
+                                                            ng-model="vm.model.I20" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I21" class="col-sm-7 col-form-label text-end">Otros
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I21"
+                                                            ng-model="vm.model.I21" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I22" class="col-sm-8 col-form-label text-end fw-bold">Costo
+                                                    total
+                                                </label>
+                                                <div class="col">
+                                                    <div class="text-center fw-bold" id="I22">${{vm.model.I22 | number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I25" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I25"
+                                                            ng-model="vm.model.I25" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I26" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I26"
+                                                            ng-model="vm.model.I26" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I27" class="col-sm-7 col-form-label text-end">Otras
+                                                    complicaciones (%)</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I27"
+                                                            ng-model="vm.model.I27" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I29" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I29"
+                                                            ng-model="vm.model.I29" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I30" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I30"
+                                                            ng-model="vm.model.I30" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I31" class="col-sm-7 col-form-label text-end">Estenosis
+                                                    residual
+                                                    posible reintervención</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I31"
+                                                            ng-model="vm.model.I31" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="I32" class="col-sm-7 col-form-label text-end">Otras complicaciones  </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="I32"
+                                                            ng-model="vm.model.I32" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Tromboembolectomia manual Embolectomy catheter</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N14" class="col-sm-7 col-form-label text-end">Costo
+                                                    dispositivo principal </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N14"
+                                                            ng-model="vm.model.N14" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N15" class="col-sm-7 col-form-label text-end">Dispositivos
+                                                    por procedimiento </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center form-control-plaintext"
+                                                            id="N15" ng-model="vm.model.N15" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N16" class="col-sm-7 col-form-label text-end">Otros insumos
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center " id="N16"
+                                                            ng-model="vm.model.N16" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N17" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala hemodinamia </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N17"
+                                                            ng-model="vm.model.N17" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N18" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala intervencionismo </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N18"
+                                                            ng-model="vm.model.N18" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N19" class="col-sm-7 col-form-label text-end">Honorarios
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N19"
+                                                            ng-model="vm.model.N19" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N20" class="col-sm-7 col-form-label text-end">Tratamiento
+                                                    adyuvante </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N20"
+                                                            ng-model="vm.model.N20" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N21" class="col-sm-7 col-form-label text-end">Otros
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N21"
+                                                            ng-model="vm.model.N21" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N22" class="col-sm-8 col-form-label text-end fw-bold">Costo
+                                                    total
+                                                </label>
+                                                <div class="col">
+                                                    <div class="text-center fw-bold" id="N22">${{vm.model.N22 | number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N25" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N25"
+                                                            ng-model="vm.model.N25" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N26" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N26"
+                                                            ng-model="vm.model.N26" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N27" class="col-sm-7 col-form-label text-end">Ruptura
+                                                    arterial por balón (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N27"
+                                                            ng-model="vm.model.N27" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N29" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N29"
+                                                            ng-model="vm.model.N29" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N30" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N30"
+                                                            ng-model="vm.model.N30" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N31" class="col-sm-7 col-form-label text-end">Estenosis
+                                                    residual
+                                                    posible reintervención</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N31"
+                                                            ng-model="vm.model.N31" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="N32" class="col-sm-7 col-form-label text-end">Ruptura
+                                                    arterial por balón</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="N32"
+                                                            ng-model="vm.model.N32" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row-cols-1 border rounded h-100 shadow-sm">
+                                    <h5 class="text-center my-3">Tratamiento convencional</h5>
+                                    <div class="row g-4 row-cols-1 row-cols text-center">
+                                        <form>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S14" class="col-sm-7 col-form-label text-end">Costo
+                                                    dispositivo principal </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S14"
+                                                            ng-model="vm.model.S14" format="number" digits="2" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S15" class="col-sm-7 col-form-label text-end">Dispositivos
+                                                    por procedimiento </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center form-control-plaintext"
+                                                            id="S15" ng-model="vm.model.S15" format="number"
+                                                            digits="2" />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S16" class="col-sm-7 col-form-label text-end">Otros insumos
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center " id="S16"
+                                                            ng-model="vm.model.S16" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S17" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala hemodinamia </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S17"
+                                                            ng-model="vm.model.S17" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S18" class="col-sm-7 col-form-label text-end">Derechos de
+                                                    sala intervencionismo </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S18"
+                                                            ng-model="vm.model.S18" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S19" class="col-sm-7 col-form-label text-end">Honorarios
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S19"
+                                                            ng-model="vm.model.S19" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S20" class="col-sm-7 col-form-label text-end">Tratamiento
+                                                    adyuvante </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S20"
+                                                            ng-model="vm.model.S20" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S21" class="col-sm-7 col-form-label text-end">Otros
+                                                </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <span class="input-group-text">$</span>
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S21"
+                                                            ng-model="vm.model.S21" format="number" digits="2">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S22" class="col-sm-8 col-form-label text-end fw-bold">Costo
+                                                    total
+                                                </label>
+                                                <div class="col">
+                                                    <div class="text-center fw-bold" id="S22">${{vm.model.S22 | number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S25" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S25"
+                                                            ng-model="vm.model.S25" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S26" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S26"
+                                                            ng-model="vm.model.S26" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S27" class="col-sm-7 col-form-label text-end">Otras
+                                                    complicaciones (%) </label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S27"
+                                                            ng-model="vm.model.S27" format="number" digits="2">
+                                                        <span class="input-group-text">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S29" class="col-sm-7 col-form-label text-end">Amputación en
+                                                    30 días</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S29"
+                                                            ng-model="vm.model.S29" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S30" class="col-sm-7 col-form-label text-end">Tasa de éxito
+                                                    técnico</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S30"
+                                                            ng-model="vm.model.S30" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S31" class="col-sm-7 col-form-label text-end">Estenosis
+                                                    residual
+                                                    posible reintervención</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S31"
+                                                            ng-model="vm.model.S31" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-1 align-items-center">
+                                                <label for="S32" class="col-sm-7 col-form-label text-end">Otras
+                                                    complicaciones</label>
+                                                <div class="col">
+                                                    <div class="input-group input-group-sm">
+                                                        <input type="text"
+                                                            class="form-control form-control-sm text-center" id="S32"
+                                                            ng-model="vm.model.S32" format="number" digits="2" readonly>
+                                                        <span class="input-group-text">casos</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 g-3 m-1 py-2 border rounded h-100 shadow-sm">
+                            <div class="my-4 text-center h5">Costos con complicaciones</div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+                                    <div class="row mb-3 align-items-center">
+                                        <label for="L8" class="col-sm-7 col-form-label text-end">Sangrado mayor
+                                        </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="L8" ng-model="vm.model.L8" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+
+                                    <div class="row mb-1 align-items-center">
+                                        <label for="L7" class="col-sm-7 col-form-label text-end">Otras complicaciones
+                                        </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="L7" ng-model="vm.model.L7" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+
+                                    <div class="row mb-1 align-items-center">
+                                        <label for="R5" class="col-sm-7 col-form-label text-end">Ruptura arterial por
+                                            balón
+                                        </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="R5" ng-model="vm.model.R5" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+                                    <div class="row mb-1 align-items-center">
+                                        <label for="R6" class="col-sm-7 col-form-label text-end">Otras complicaciones
+                                        </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="R6" ng-model="vm.model.R6" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3 g-3 m-1 py-2 border rounded h-100 shadow-sm">
+                            <div class="my-4 text-center h5">Otros costos</div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+
+                                    <div class="row mb-1 align-items-center">
+                                        <label for="L5" class="col-sm-7 col-form-label text-end">Amputación </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="L5" ng-model="vm.model.L5" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="row g-4 row-cols-1 row-cols text-center">
+
+                                    <div class="row mb-1 align-items-center">
+                                        <label for="L6" class="col-sm-7 col-form-label text-end">Reintervención o
+                                            tratamiento adicional
+                                        </label>
+                                        <div class="col">
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-text">$</span>
+                                                <input type="text" class="form-control form-control-sm text-center"
+                                                    id="L6" ng-model="vm.model.L6" format="number" digits="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="modelo" role="tabpanel" aria-labelledby="modelo-tab">
+                        <div class="h5 text-center my-4">Pacientes con Isquemia aguda de la enfermedad arterial
+                            periferica
+                            {{vm.model.F3}} pacientes/mes
+                        </div>
+                        <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                            <div class="col">
+                                <div class="card border_brand_blue">
+                                    <div class="card-header bg_brand_blue">
+                                        Trombectomía Mecánica Percutánea (PMT) Rotarex
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="C12"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Pacientes /
+                                                mes
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="C12"
+                                                        ng-model="vm.model.C12" format="number" digits="0" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Resultado financiero - 12 meses</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="D35"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                tratamiento
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="D35"
+                                                        ng-model="vm.model.D35" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="D37"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                amputaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="D37"
+                                                        ng-model="vm.model.D37" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="D39"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Reintervenciones
+                                                (estenosis residual)
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="D39"
+                                                        ng-model="vm.model.D39" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="D41"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Sangrado
+                                                mayor
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="D41"
+                                                        ng-model="vm.model.D41" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="D43"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end fw-bold">Costos
+                                                totales
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1 fw-bold"
+                                                        id="D43" ng-model="vm.model.D43" format="number" digits="0"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card  border_brand_orange">
+                                    <div class="card-header bg_brand_orange">
+                                        Otras Trombectomías
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="H12"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Pacientes /
+                                                mes
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="H12"
+                                                        ng-model="vm.model.H12" format="number" digits="0" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Resultado financiero - 12 meses</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="I35"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                tratamiento
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="I35"
+                                                        ng-model="vm.model.I35" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="I37"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                amputaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="I37"
+                                                        ng-model="vm.model.I37" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="I39"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Reintervenciones
+                                                (estenosis residual)
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="I39"
+                                                        ng-model="vm.model.I39" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="I41"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Otras
+                                                complicaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="I41"
+                                                        ng-model="vm.model.I41" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="I43"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end fw-bold">Costos
+                                                totales
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1 fw-bold"
+                                                        id="I43" ng-model="vm.model.I43" format="number" digits="0"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card  border_brand_yellow">
+                                    <div class="card-header bg_brand_yellow">
+                                        Tromboembolectomia manual Embolectomy catheter
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="M12"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Pacientes /
+                                                mes
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="M12"
+                                                        ng-model="vm.model.M12" format="number" digits="0" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Resultado financiero - 12 meses</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="N35"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                tratamiento
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="N35"
+                                                        ng-model="vm.model.N35" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="N37"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                amputaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="N37"
+                                                        ng-model="vm.model.N37" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="N39"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Reintervenciones
+                                                (estenosis residual)
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="N39"
+                                                        ng-model="vm.model.N39" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="N41"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Ruptura
+                                                arterial por balón
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="N41"
+                                                        ng-model="vm.model.N41" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="N43"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end fw-bold">Costos
+                                                totales
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1 fw-bold"
+                                                        id="N43" ng-model="vm.model.N43" format="number" digits="0"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card  border_brand_pink">
+                                    <div class="card-header bg_brand_pink">
+                                        Tratamiento convencional
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="R12"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Pacientes /
+                                                mes
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="R12"
+                                                        ng-model="vm.model.R12" format="number" digits="0" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Resultado financiero - 12 meses</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="S35"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                tratamiento
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="S35"
+                                                        ng-model="vm.model.S35" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="S37"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Costos con
+                                                amputaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="S37"
+                                                        ng-model="vm.model.S37" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="S39"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Reintervenciones
+                                                (estenosis residual)
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="S39"
+                                                        ng-model="vm.model.S39" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="S41"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end">Otras complicaciones
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1" id="S41"
+                                                        ng-model="vm.model.S41" format="number" digits="0" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1 align-items-center">
+                                            <label for="S43"
+                                                class="col-sm-7 col-form-label col-form-label-sm text-end fw-bold">Costos
+                                                totales
+                                            </label>
+                                            <div class="col">
+                                                <div class="input-group input-group-sm">
+                                                    <span class="input-group-text">$</span>
+                                                    <input type="text"
+                                                        class="form-control form-control-sm text-end px-1 fw-bold"
+                                                        id="S43" ng-model="vm.model.S43" format="number" digits="0"
+                                                        readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g3 px-4 ">
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart1" height="300" style="max-height: 300px;"></canvas>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart2" height="300" style="max-height: 300px;"></canvas>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="col-md-12 d-print-inline-block mb-3">
+                                <div class="p-1" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart3" height="300" style="max-height: 300px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
+                        <div class="row">
+                            <div class="col-12 py-4 px-5" style="font-size: 0.8rem;">
+                                <h5 class="mb-3 text-center">REFERENCES</h5>
+                                <ol>
+                                    <li class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat
+
+                                    </li>
+                                    <li class="mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+                                    </li>
+                                    <li class="mb-2">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                                        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo
+                                    </li>
+                                    <li class="mb-2">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                                        aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+                                        nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                                        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+                                        labore et dolore magnam aliquam quaerat voluptatem
+                                    </li>
+                                    <li class="mb-2">Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                                        corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                                        autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                        molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+                                        pariatur?"
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto d-print-table" id="footer">
+
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container  py-3 " style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+            <span class="float-end">US-FLC188-230005 v1 1/23</span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser usado apenas com o propósito de demonstrar possíveis resultados clínicos e
+                        econômicos em situações normais de atenção médica.</p>
+
+                    <p> Os resultados e valores são apenas estimativas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são específicos de um caso. Os resultados
+                        mostrados neste modelo podem variar de acordo com a situação.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">
+                        Desenvolvido por ValueConnected. 2022.
+                    </p>
+                    <button type="button" class="btn btn-secondary"
+                        ng-click="vm.addToSessionStorage('accepted','yes')">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/jquery.min.js"></script>
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="./assets/chart.js"></script>
+    <script src="./assets/chartjs-plugin-datalabels.2.1.0.js"></script>
+    <script src="./assets/chartjs-plugin-doughnutlabel.min.js"></script>
+
+    <script src="./assets/angular.min.js"></script>
+
+    <script src="./index.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-bs-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{
+    "GLOBAL": {
+        "PageTitle": "MedSurg Patient Deterioration Burden Calculator Chile",
+        "Title": "MedSurg Patient Deterioration Burden Calculator Chile",
+        "CurrencySymbol": "$"
+    },
+    "LABELS": {
+        "B2": "Average number of <br>staffed MedSurg beds",
+        "B3": "Occupancy rate&nbsp;(%)&nbsp;<sup>5</sup>",
+        "B4": "Patient deterioration rate&nbsp;(%)&nbsp;<sup>6</sup>",
+        "B5": "Average hospital LOS &nbsp;<sup>1</sup>",
+        "B6": "Average ICU LOS &nbsp;<sup>2</sup>",
+        "B9": "MedSurg Direct <br> Variable Cost per day &nbsp;<sup>3</sup>",
+        "B10": "Average ICU Direct <br>Variable Cost per day&nbsp;<sup>4</sup>",
+        "B11": "",
+        "B13": "Increased LOS directly due to patient deterioration&nbsp;(days)&nbsp;<sup>7</sup>",
+        "B15": "Unplanned ICU transfer rate due to patient deterioration&nbsp;<sup>6</sup>",
+        "B16": "",
+        "H23": "Estimated increased LOS days due to <br/>Patient Deterioration",
+        "D22": "Annual Patient Deterioration <br/>Direct Costs",
+        "B19": "Increased Annual LOS due to Patient Deterioration",
+        "B21": "Projected Annual Rate of MedSurg Code Blues",
+        "DisclaimerTitle": "Disclaimer",
+        "DisclaimerText": "This calculator is intended to be used only for the purpose of assessing and demonstrating potential cost savings ranges under normalized hospital cost conditions. The results and outcomes are estimations only and should not be interpreted as a guarantee or warranty of similar results. It does not suggest a definitive review of actual costs and savings incurred in a hospital. Savings are estimates only and specific to the individual case. Savings may not be typical and may vary.",
+        "ReferencesTitle": "References"
+    },
+    "REFERENCES": {
+        "1": "(1) Superintendencia de Salud, 2019 (https://www.supersalud.gob.cl/difusion/665/w3-propertyvalue-2426.html#acordeonDocumentos",
+        "2": "(2) Ruiz C, Díaz MÁ, Zapata JM, Bravo S, Panay S, Escobar C, Godoy J, Andresen M, Castro R. Características y evolución de los pacientes que ingresan a una Unidad de Cuidados Intensivos de un hospital público [Characteristics and evolution of patients admitted to a public hospital intensive care unit]. Rev Med Chil. 2016 Oct;144(10):1297-1304. Spanish. doi: 10.4067/S0034-98872016001000009. PMID: 28074985.",
+        "3": "(3) 2014 costs: USD 68.83 exchanged into Chilean pesos; Medina, Alex & Gallegos-Muñoz, Cecilia & Pavez, Carolina & Morales, Berta. (2015). Costo día cama servicio pensionado para una enfermedad en un hospital de Chile. Revista de la Universidad Industrial de Santander. Salud. 47. 301-312. 10.18273/revsal.v47n3-2015006.",
+        "4": "(4) 2013 costs: $406,292; Alvear, Sandra, Jorge Canteros, Juan Carlos Vintimilla Jara and Patricia Rodríguez. “Costos reales de tratamientos intensivos por paciente y día cama.” Revista Medica De Chile 141 (2013): 202-208.",
+        "5": "(5) OECD (https://www.oecd-ilibrary.org/sites/e5a80353-en/index.html?itemId=/content/component/e5a80353-en)",
+        "6": "(6) \"MONTENEGRO, S. M. S. L.; MIRANDA, C. H. Avaliação do desempenho do escore de alerta precoce modificado em hospital público brasileiro. Rev. Bras. Enferm. v. 72, n. 6, p. 1428- 1434, dez. 2019.\"",
+        "7": "(7) Gaspari et al. Predictors of prolonged hospital stay in a Comprehensive Stroke Unit. Rev. Latino-Am. Enfermagem 2019;27:e3197 (calculated as average LOS of stroke patients with complications minus the average LOS of stroke patients without complications)",
+        "8": ""
+    }
+}

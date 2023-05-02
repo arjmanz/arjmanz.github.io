@@ -1,0 +1,12 @@
+{
+    "LABELS": {
+        "B2": "Number of staffed MedSurg beds",
+        "B5": "Additional ICU LOS due to PPC",
+        "B8": "Direct variable cost per day"
+    },
+    "REFERENCES": {
+        "1": "(EN) Indicadores hospitalares ANAHP. Núcleo de Estudos e Análises, Agosto 2022.",
+        "2": "(EN) Amaro, MLM. Registros de deterioração clínica antes e depois da implantação de um sistema informatizado de alerta. Dissertação Mestrado. Programa de Pós-Graduação em Enfermagem. Universidade Federal do Paraná, 2019.",
+        "3": "(EN) Gonçales PDS, et al. Reduced frequency of cardiopulmonary arrests by rapid response teams. Einstein. 2012;10(4):442-8,"
+    }
+}

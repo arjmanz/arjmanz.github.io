@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css"
+        integrity="sha512-TyWCaas9L4y1gxHab/GuTzL5/8TLiR3VV359px8b7knWyR8ID35mP0f1pc9STY4JbqWWXfCWOzoRrT5gPHWFXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/theme.min.css">
+    <link rel="stylesheet" href="assets/custom-flat.css">
+    <!--link rel="stylesheet" href="assets/bootstrap-theme.min.css"-->
+    <title>U.S. Hospital Pressure Injury (PI) Burden Calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="panel panel-default2">
+                    <div class="panel-heading">
+                        <button id="reset_to_defaults" class="btn btn-danger btn-sm pull-right">Reset to
+                            default</button>
+                        <h2 style="margin-bottom:20px;">U.S. Hospital Pressure Injury (PI) Burden Calculator</h2>
+                        <p>
+                            Fill in the fields below with your data to discover the estimated burden associated with all
+                            pressure injuries in your hospital.<br />
+                            The burden calculator is populated with data from the literature, however, all fields can be
+                            changed to reflect your hospital situation.
+
+                        </p>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="container-fluid" style="padding-left:0; padding-right:0;">
+                            <div class="row">
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="label-wrapper-sm label-wrapper-xxxs">
+                                        <label class="bottom" for="C5">Number of beds</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input id="C5" name="C5" type="text" class="form-control" value="100">
+                                        <span class="input-group-btn"><a data-clear="C5" class="btn btn-default"><span
+                                                    aria-hidden="true">&times;</span></a></span>
+                                    </div>
+                                    <span class="pull-right">
+                                        <label class="bottom" for="C5">
+                                            Number of Admissions : 
+                                        </label>
+                                        <span id="C7" ></span>
+                                    </span>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="label-wrapper-sm label-wrapper-xxxs">
+                                        <label class="bottom" for="C6">Average Hospital LOS
+                                            (Days)&nbsp;<sup>1</sup></label>
+                                    </div>
+                                    <div class="input-group" lang="en-us">
+                                        <input id="C6" name="C6" type="text" class="form-control" value="4.7" §>
+                                        <span class="input-group-btn"><a data-clear="C6" class="btn btn-default"><span
+                                                    aria-hidden="true">&times;</span></a></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="label-wrapper-sm label-wrapper-xxxs">
+                                        <label class="bottom" for="C14">Average increased LOS per PI Patient
+                                            &nbsp;<sup>7</sup></label>
+                                    </div>
+                                    <div class="input-group">
+                                        <input id="C14" name="C14" type="text" class="form-control" value="4">
+                                        <span class="input-group-btn"><a data-clear="C14" class="btn btn-default"><span
+                                                    aria-hidden="true">&times;</span></a></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="label-wrapper-sm label-wrapper-xxxs">
+                                        <label class="bottom" for="C16">Average Direct Variable Cost per
+                                            day&nbsp;<sup>3, 4, 5</sup></label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">$</span>
+                                        <input id="C16" name="C16" type="text" class="form-control" value="920">
+                                        <span class="input-group-btn"><a data-clear="C16" class="btn btn-default"><span
+                                                    aria-hidden="true">&times;</span></a></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="label-wrapper-sm">
+                                        <label class="bottom" for="C9">Average Occupancy rate (%)&nbsp;<sup>6</sup></label>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="C9" name="C9" type="range" data-slider-min="0" data-slider-max="100"
+                                            data-slider-step="0.5" data-slider-value="61">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="label-wrapper-sm">
+                                        <label class="bottom" for="C12">Average PI Incidence
+                                            Rate&nbsp;<sup>2</sup></label>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="C12" name="C12" type="range" data-slider-min="0"
+                                            data-slider-max="100" data-slider-step=".01" data-slider-value="8.97">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4 col-md-4 col-lg-4">
+                                    <div class="label-wrapper-sm">
+                                        <label class="bottom" for="C19">Average rate of patients at risk of
+                                            developing a PI (%)&nbsp;<sup>8</sup></label>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="C19" name="C19" type="range" data-slider-min="0"
+                                            data-slider-max="100" data-slider-step=".01" data-slider-value="49.02">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/bed-blue-ico.svg" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1 id="C13">--</h1>
+                                <h4 id="A15">Estimated Annual Cases of all PI <br />&nbsp;</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/cal-orange-ico.svg" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1 id="C15">--</h1>
+                                <h4 id="A18">Estimated annual incremental LOS days for all PI Patients</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/money-blue-ico.svg" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1>$<span id="C17">--</span></h1>
+                                <h4 id="A21">Estimated annual direct variable cost for all PI Patients</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/bandaid.png" width="56" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1 id="C20">--</h1>
+                                <h4>Estimated annual number of patients at risk of developing a PI</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/spoon_fork.png" width="56" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1><span id="C23">--</span>
+                                    <sup data-toggle="tooltip" data-trigger="hover" data-placement="auto"
+                                        title="32.7% of hospitalized patients have some level of malnutrition.  Sauer, et al.,  (2019)">
+                                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"
+                                            style="color: #59bec9;margin-left: 5px; font-size: 2.5rem;"></span>
+                                    </sup>
+                                </h1>
+                                <h4 id="A15">Estimated number of hospitalized patients in some state of malnourishment
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/spoon_fork.png" width="56" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1><span id="C24">--</span>
+                                    <sup data-toggle="tooltip" title="Banks, et al., (Australia) 2010">
+                                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"
+                                            style="color: #59bec9;margin-left: 5px; font-size: 2.5rem;">
+                                        </span>
+                                    </sup>
+                                </h1>
+                                <h4 id="A18">Odds of acquiring a PI or worsening when malnourishment present
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/bladder.png" height="56" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1><span id="C27">--</span><sup data-toggle="tooltip"
+                                        title="34% of hospitalized patients are incontinent.  Kayser, et al., (2019)">
+                                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"
+                                            style="color: #59bec9;margin-left: 5px; font-size: 2.5rem;">
+                                        </span>
+                                    </sup></h1>
+                                <h4 id="A21">Estimated Number of hospitalized patients with incontinence<br />&nbsp;
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-3 col-xxxs-6">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+                        <img src="assets/images/bladder.png" height="56" alt="">
+                        <div class="panel-info-box">
+                            <div class="text-center">
+                                <h1><span id="C28">--</span><sup data-toggle="tooltip"
+                                        title="Lachenbruch, et al., (2016)">
+                                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"
+                                            style="color: #59bec9;margin-left: 5px; font-size: 2.5rem;">
+                                        </span>
+                                    </sup></h1>
+                                <h4>Odds of developing or worsening a Sacral Region PI if patient incontinent</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+
+                        <h4>Disclaimer</h4>
+                        <p>
+                            This calculator is intended to be used only for the purpose of assessing and demonstrating
+                            potential cost savings ranges under normalized hospital cost conditions. The results and
+                            outcomes are estimations only and should not be interpreted as a guarantee or warranty of
+                            similar results. It does not suggest a definitive review of actual costs and savings
+                            incurred in a hospital. Savings are estimates only and specific to the individual case.
+                            Savings may not be typical and may vary.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="panel panel-default2">
+                    <div class="panel-body">
+
+                        <h4>References</h4>
+
+                        <p>
+                            (1) Agency for Healthcare Research and Quality (AHRQ). Healthcare cost and utilization
+                            project. National (Nationwide) Inpatient Sample (NIS). Date accessed:
+                            www.ahrq.gov/data/hcup/index.html.
+
+                        </p>
+
+                        <p>
+                            (2) Vangilder, C., Cox, J., Edsberg, L.E., Koloms, K. (2021). Pressure Injury Prevalence in
+                            Acute Care Hospitals With Unit-Specific Analysis - Results From the International Pressure
+                            Ulcer Prevalence (IPUP) Survey Database. Journal Wound Ostomy Continence Nursing.
+                            2021;48(6):492-503.
+                        </p>
+
+                        <p>
+                            (3) Taheri, P. A., Butz, D. A., & Greenfield, L. J. (2000). Length of stay has minimal
+                            impact on the cost of hospital admission. Journal of the American College of Surgeons,
+                            191(2), 123–130. https://doi.org/10.1016/s1072-7515(00)00352-5
+                        </p>
+
+                        <p>
+                            (4) Milbrandt, E. B., Kersten, A., Rahim, M. T., Dremsizov, T. T., Clermont, G., Cooper, L.
+                            M., Angus, D. C., & Linde-Zwirble, W. T. (2008). Growth of intensive care unit resource use
+                            and its estimated cost in Medicare. Critical care medicine, 36(9), 2504–2510.
+                            https://doi.org/10.1097/CCM.0b013e318183ef
+                        </p>
+
+                        <p>
+                            (5) Slight, S. P., Franz, C., Olugbile, M., Brown, H. V., Bates, D. W., & Zimlichman, E.
+                            (2014). The return on investment of implementing a continuous monitoring system in general
+                            medical-surgical units. Critical care medicine, 42(8), 1862–1868.
+                            https://doi.org/10.1097/CCM.0000000000000340
+                        </p>
+
+                        <p>
+                            (6) ADefinitive Healthcare. (2021). Top-10 hospital performance metrics you need to know.
+                            https://www.definitivehc.com/blog/top-10-hospital-performance-metrics-you-need-to-know
+                        </p>
+
+                        <p>
+                            (7) Bauer, K., Rock, K., Nassal, M., Jones, O., Qu, W., (2016). Pressure Ulcers in the
+                            United States Inpatient Population From 2008 to 2012: Results of a Retrospective Nationwide
+                            Study. Ostomy Wound Management (November).
+                        </p>
+
+                        <p>
+                            (8) Hillrom Data on File. International Pressure Ulcer Prevalence Survey. (2019)
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"
+        integrity="sha512-K2Z2qgZPVDg2pfGAgwKhAenvl/tT+A9nQ76jLf+zEkpv44h5ObBPsuxy1vBroX1XV67EUf+JIO6ZoaBe/SbkTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

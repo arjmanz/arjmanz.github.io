@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="ValueConnected">
+    <meta name="generator" content="">
+    <title>OnClarity - HPV Rastreio Primário com Genotipagem Estendida</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#337ab7">
+
+    <!-- Custom styles for this template -->
+    <link href="./index.css" rel="stylesheet">
+
+
+</head>
+
+<body class="d-flex flex-column h-100" ng-app="myApp" ng-controller="myCtrl as vm">
+
+    <main class="flex-shrink-0 d-print-inline-block">
+        <h1 class="visually-hidden">Cepheid - GeneXpert</h1>
+
+        <div class="container py-2 my-2" id="featured-3">
+            <h3 class="pb-0 ">HPV Rastreio Primário com Genotipagem Estendida</h3>
+        </div>
+
+        <div class="b-example-divider d-print-none"></div>
+
+        <div class="container px-2 py-4">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs nav-fill card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#dados">Dados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#modelo">Modelo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#referencias">Referências</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content">
+                    <div class="tab-pane active" id="dados" role="tabpanel" aria-labelledby="dados-tab">
+                        <div>
+                            <h5 class="text-center my-4">Custos considerados</h5>
+                            <div class="row g-4 row-cols-1 row-cols text-center">
+                                <div class="col-7 mx-auto ">
+                                    <form>
+                                        <div class="row mb-2">
+                                            <label for="B9" class="col-sm-6 col-form-label text-end">Citologia
+                                                Convencional (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B9"
+                                                        ng-model="vm.model.B9" format="number" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B10" class="col-sm-6 col-form-label text-end">Citologia em Meio
+                                                Líquido (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B10"
+                                                        ng-model="vm.model.B10" format="number" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B11" class="col-sm-6 col-form-label text-end">OnClarity
+                                                (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B11"
+                                                        ng-model="vm.model.B11" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="B12"
+                                                class="col-sm-6 col-form-label text-end">Colposcopia(R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="B12"
+                                                        ng-model="vm.model.B12" format="number">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row mb-2">
+                                            <label for="C13" class="col-sm-6 col-form-label text-end">Tratamento NIC
+                                                anual (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="C13"
+                                                        ng-model="vm.model.C13" format="number" digits="2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="C14" class="col-sm-6 col-form-label text-end">Tratamento câncer
+                                                cervical (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="C14"
+                                                        ng-model="vm.model.C14" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                            <label for="G12" class="col-sm-6 col-form-label text-end">Captura Híbrida
+                                                (R$)</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">R$</span>
+                                                    <input type="text" class="form-control text-center" id="G12"
+                                                        ng-model="vm.model.G12" format="number">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row-cols my-3 text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-target="#detailsModal"
+                                    data-bs-toggle="modal" data-bs-dismiss="modal">Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="modelo" role="tabpanel" aria-labelledby="modelo-tab">
+                        <div class="row">
+                            <div class="col-md-4 d-print-inline-block align-items-center pe-4">
+                                <label for="B3" class="form-label">Vidas cobertas</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control text-center" id="B3" ng-model="vm.model.B3"
+                                        format="number" digits="0" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-print-inline-block  align-items-center pe-4">
+                                <div class="mb-2">
+                                    <label for="exampleFormControlInput1" class="form-label">Pacientes ao ano</label>
+                                    <span class="float-end">{{vm.model.C4 | number : 1 }}%</span>
+                                    <input type="range" class="form-range" id="C4" step=".1" ng-model="vm.model.C4">
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-print-inline-block align-items-center text-center">
+                                <span class="h2">{{  vm.model.B4 | number : 0 }}</span>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row  g-2 chart-footer align-items-stretch mb-3 p-2 text-white"
+                            style="background-color: #023970 !important;">
+                            <div class="col-md-3 col-sm-6 d-print-inline-block align-items-center pe-3">
+                                <div class="d-flex w-100">
+                                    <label for="I14" class="form-label">% Pacientes de citologia convencional com
+                                        captura
+                                        híbrida</label>
+                                </div>
+                                <div class="mb-2 mt-auto text-center">
+                                    <div class="input-group">
+                                        <input type="range" class="form-range form-control py-3" id="I14" step="1"
+                                            ng-model="vm.model.I14" style="background-color: #fff;">
+                                        <label class="input-group-text">{{vm.model.I14 | number : 0
+                                            }}%</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 d-print-inline-block align-items-center pe-3 flex-column">
+                                <div class="align-top">
+                                    <label for="E14" class="form-label form-label-sm">Exames adicionais de captura
+                                        híbrida por paciente</label>
+                                </div>
+                                <div class="input-group mt-auto">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E14"
+                                        ng-model="vm.model.E14" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 d-print-inline-block align-items-center">
+                                <div class="">
+                                    <label class="form-label">Quantidade de exames por
+                                        Capturas Híbridas</label>
+                                </div>
+                                <div class="text-center">
+                                    <span class="fs-5">{{vm.model.G14 | number : 0 }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 d-print-inline-block align-items-center">
+                                <div class="">
+                                    <label class="form-label">Custo total com pacientes
+                                        de citologia convencional</label>
+                                </div>
+                                <div class="text-center">
+                                    <div class="fs-5">R$ {{vm.model.G16 | number : 0 }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2 chart-footer align-items-stretch p-2"
+                            style="background-color: #FDB713 !important;">
+                            <div class="col-md-3 d-print-inline-block align-items-center pe-3">
+                                <div class="">
+                                    <label for="I50" class="form-label">% Pacientes de citologia em meio líquido com
+                                        captura híbrida</label>
+                                </div>
+                                <div class="mb-2 text-center">
+                                    <div class="input-group">
+                                        <input type="range" class="form-range form-control py-3" id="I50" step="1"
+                                            ng-model="vm.model.I50" style="background-color: #fff;">
+                                        <label class="input-group-text">{{vm.model.I50 | number : 0 }}%</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-print-inline-block  align-items-center pe-3">
+                                <div class="">
+                                    <label for="E50" class="form-label form-label-sm">Exames adicionais de captura
+                                        híbrida
+                                        por paciente</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm text-center" id="E50"
+                                        ng-model="vm.model.E50" format="number" digits="1" />
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-print-inline-block align-items-center">
+                                <div class="">
+                                    <label class="form-label">Quantidade de exames por Capturas Híbridas</label>
+                                </div>
+                                <div class="text-center" style="color: #000 !important;">
+                                    <span class="fs-5">{{ vm.model.G50 | number : 0 }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-print-inline-block align-items-center">
+                                <div class="">
+                                    <label class="form-label text-left">Custo total com pacientes
+                                        de citologia em meio líquido
+                                    </label>
+                                </div>
+                                <div class="text-center" style="color: #000 !important;">
+                                    <div class="fs-5">R$ {{ vm.model.G52 | number : 0 }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6 d-print-inline-block">
+                                <div class="p-4" style="min-height: 300px; min-width: 300px;">
+                                    <canvas class="" id="myChart1" height="200"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-print-inline-block">
+                                <div class="p-4" style="min-height: 300px;">
+                                    <canvas class="" id="myChart2" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 d-print-inline-block">
+                                <div class="p-4" style="min-height: 300px;">
+                                    <canvas class="" id="myChart3" height="200"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-print-inline-block">
+                                <div class="p-4" style="min-height: 300px;">
+                                    <canvas class="" id="myChart4" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
+                        <div class="row">
+                            <div class="col-12 py-4 px-5" style="font-size: 0.8rem;">
+                                <h5 class="mb-3 text-center">REFERÊNCIAS UTILIZADAS</h5>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div class="fw-bold">&Iacute;ndices de sensibilidade, especificidade e
+                                                amostras
+                                                insatisfat&oacute;rias</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Citologia Convencional</div>
+                                            <div>BRASIL. Minist&eacute;rio da Sa&uacute;de. Departamento de
+                                                Inform&aacute;tica do SUS. Sistema de Informa&ccedil;&atilde;o do
+                                                C&acirc;ncer do Colo do &Uacute;tero. 2020.</div>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <div class="text-decoration-underline mt-1">Citologia em Meio L&iacute;quido
+                                        </div>
+                                        <div>Longatto-Filho A et al. Critical Analyses of the Introduction of
+                                            Liquid-Based Cytology in a Public Health Service of the State of
+                                            S&atilde;o Paulo, Brazil. Acta Cytol. 2015;59(3):273-7. (a atualizar)
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-decoration-underline mt-1">Rastreio por PCR</div>
+                                        <div>Koliopoulos G et al. Citology versus HPV testing for cervical cancer
+                                            screening in the general population. Cochrane Database of Systematic
+                                            Reviews 2017. Issue 8. Art n. CD00887.</div>
+                                        <div>Levi JE et al. High-Risk HPV Testing in Primary Screening for Cervical
+                                            Cancer in the Public Health System, S&atilde;o Paulo, Brazil. Cancer
+                                            Prev Res (Phila). 2019 Aug;12(8):539-546.</div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div class="fw-bold mt-3">Taxas de progress&atilde;o para NIC2+ ou
+                                                c&acirc;ncer cervical</div>
+                                        </div>
+                                        <div>
+                                            <div>Demarco M et al. Risks of CIN 2+, CIN 3+, and Cancer by Cytology and
+                                                Human Papillomavirus Status: The Foundation of Risk-Based Cervical
+                                                Screening Guidelines. J Low Genit Tract Dis. 2017 Oct;21(4):261-267.
+                                            </div>
+                                            <div>Franco E et al. Design and methods of the Ludwig-McGill longitudinal
+                                                study of the natural history of human papillomavirus infection and
+                                                cervical neoplasia in Brazil. Rev Panam Salud Publica. 1999
+                                                Oct;6(4):223-33.</div>
+                                        </div>
+
+                                        <div>
+                                            <div class="fw-bold mt-3">Taxas de progress&atilde;o para NIC2+ ou
+                                                c&acirc;ncer cervical</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Colposcopia</div>
+                                        </div>
+                                        <div>
+                                            <div>Tabela AMB 2021 para CBHPM 4.13.01.10-2 Colposcopia (c&eacute;rvice
+                                                uterina e vagina)</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Citologia convencional</div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 4.03.09.04-5 C&eacute;lulas, pesquisa de
+                                                    c&eacute;lulas neopl&aacute;sicas (citologia onc&oacute;tica),
+                                                    pesquisa
+                                                    l&iacute;quidos org&acirc;nicos</div>
+                                            </div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 4.06.01.13-7 Procedimento
+                                                    diagn&oacute;stico
+                                                    em citopatologia c&eacute;rvico-vaginal onc&oacute;tica</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Citologia em Meio L&iacute;quido
+                                            </div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 4.06.01.32-3 Procedimento
+                                                    diagn&oacute;stico
+                                                    citopatol&oacute;gico em meio l&iacute;quido</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Rastreio Prim&aacute;rio</div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 4.06.01.29-3 Procedimento
+                                                    diagn&oacute;stico
+                                                    por captura h&iacute;brida</div>
+                                            </div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 4.03.14.15-4 HPV (v&iacute;rus do
+                                                    papiloma
+                                                    humano) + subtipagem quando necess&aacute;rio PCR, pesquisa (PCR
+                                                    HPV)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Tratamento NIC</div>
+                                            <div>
+                                                <div>Tabela AMB 2021 para CBHPM 3.01.01.20-4 Criocirurgia
+                                                    (nitrog&ecirc;nio
+                                                    l&iacute;quido) de neoplasias cut&acirc;neas</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-decoration-underline mt-1">Tratamento c&acirc;ncer</div>
+                                            <div>
+                                                <div>C&acirc;ncer Cervical Est&aacute;gio II, estudo UNICAMP 2019</div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer mt-auto d-print-table" id="footer">
+
+        <div class="b-example-divider d-print-none"></div>
+        <div class="container align-items-center py-3 text-center" style="font-size: .85rem;">
+            <span>Developed by <strong>ValueConnected.</strong></span>
+        </div>
+    </footer>
+
+
+    <div id="myModal" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Declaração</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este modelo deve ser usado apenas com o propósito de demonstrar possíveis resultados clínicos e
+                        econômicos em situações normais de atenção médica.</p>
+
+                    <p> Os resultados e valores são apenas estimativas e não podem ser interpretados como garantia de
+                        resultados similares. Este modelo não sugere uma revisão completa dos custos e resultados
+                        clínicos relevantes.</p>
+
+                    <p> Todos os resultados são estimativas gerais e não são específicos de um caso. Os resultados
+                        mostrados neste modelo podem variar de acordo com a situação.
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <p class="me-auto">
+                        Desenvolvido por ValueConnected. 2022.
+                    </p>
+                    <button type="button" class="btn btn-secondary"
+                        ng-click="vm.addToSessionStorage('accepted','yes')">Avançar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="detailsModal" aria-hidden="true" aria-labelledby="detailsModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body m-2">
+                    <div class="row-cols-1">
+                        <h5>Amostras insatisfatórias</h5>
+                        <table class="table table-borderless table-sm align-middle"
+                            style="font-size: .7rem; width: 50%;">
+                            <tr>
+                                <td class="text-end">Citologia Convencional</td>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm" id="B18"
+                                            ng-model="vm.model.B18" format="number" digits="1" size="4">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </td>
+                                <td>Longatto-Filho, 2015</td>
+                            </tr>
+                            <tr>
+                                <td class="text-end">Citologia em Meio Líquido</td>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm" id="B19"
+                                            ng-model="vm.model.B19" format="number" digits="1" size="4">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </td>
+                                <td>Levi, 2019; Longatto-Filho, 2015</td>
+                            </tr>
+                            <tr>
+                                <td class="text-end">OnClarity</td>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm" id="B20"
+                                            ng-model="vm.model.B20" format="number" digits="1" size="4">
+                                        <span class="input-group-text">%</span>
+                                    </div>
+                                </td>
+                                <td>Levi, 2019</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col border-end px-1">
+                            <h6 class="text-center">Citologia Convencional</h6>
+                            <table class="table table-borderless table-sm align-middle mx-auto">
+                                <tr>
+                                    <td class="text-end">Negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B26"
+                                                ng-model="vm.model.B26" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>MS</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td>
+                                        <input type="text" class="form-control form-control-sm" id="E26"
+                                            ng-model="vm.model.E26" format="number" digits="0" size="2">
+                                    </td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Verdadeiro negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B27"
+                                                ng-model="vm.model.B27" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>MS</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Falso negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B28"
+                                                ng-model="vm.model.B28" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>MS</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B29"
+                                                ng-model="vm.model.B29" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Colposcopia</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Verdadeiro Positivo<br />para ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B30"
+                                                ng-model="vm.model.B30" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Falso positivo <br />para ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B31"
+                                                ng-model="vm.model.B31" format="number" size="6" digits="2" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo ASC-US <br />- conduta: retorno</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B32"
+                                                ng-model="vm.model.B32" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E32"
+                                            ng-model="vm.model.E32" format="number" digits="1" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end"></td>
+                                    <td>
+                                        <span class="h5 text-center">{{vm.model.B33 | number :1 }}%</span>
+                                    </td>
+                                    <td colspan="100"><span ng-show="vm.model.B33!=100" class="text-danger">Atenção:
+                                            verifique dados, total deve ser 100%</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Negativo <br />para ASC-US</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B34"
+                                                ng-model="vm.model.B34" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E34"
+                                            ng-model="vm.model.E34" format="number" digits="0" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo <br />para ASC-US +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B35"
+                                                ng-model="vm.model.B35" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Colposcopia</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table><br />
+                            <h6 class="text-center mx-auto">Taxa de progressão (%) - NIC e câncer:</h6>
+                            <table class="table table-borderless table-sm align-middle mx-auto w-50">
+                                <tr>
+                                    <td class="text-center">Falso negativo</td>
+                                    <td class="text-center strong">NIC</td>
+                                    <td class="text-center strong">Câncer</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center border-1">{{vm.model.B43.toFixed(0)}}</td>
+                                    <td class="text-center border-1">{{vm.model.C43.toFixed(0)}}</td>
+                                    <td class="text-center">T=0</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center border-1">{{vm.model.B44 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C44 | number : 5}}</td>
+                                    <td class="text-center">T=1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center border-1">{{vm.model.B45 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C45 | number : 5}}</td>
+                                    <td class="text-center">T=2</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center border-1">{{vm.model.B46 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C46 | number : 5}}</td>
+                                    <td class="text-center">T=3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center border-1">{{vm.model.B47 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C47 | number : 5}}</td>
+                                    <td class="text-center">T=4</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">6</td>
+                                    <td class="text-center border-1">{{vm.model.B48 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C48 | number : 5}}</td>
+                                    <td class="text-center">T=5</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col border-end px-1">
+                            <h6 class="text-center">Citologia em meio líquido</h6>
+                            <table class="table table-borderless table-sm align-middle w-90" style="font-size: .7rem">
+                                <tr>
+                                    <td class="text-end">Negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B156"
+                                                ng-model="vm.model.B156" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Longatto-Filho, 2015</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E156"
+                                            ng-model="vm.model.E156" format="number" digits="0" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Verdadeiro negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B157"
+                                                ng-model="vm.model.B157" format="number" digits="2" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Falso negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B158"
+                                                ng-model="vm.model.B158" format="number" digits="2" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B159"
+                                                ng-model="vm.model.B159" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Longatto-Filho, 2015</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Colposcopia</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Verdadeiro Positivo <br />para ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B160"
+                                                ng-model="vm.model.B160" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Falso positivo <br />para ASC-H +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B161"
+                                                ng-model="vm.model.B161" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo ASC-US <br />- conduta: retorno</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B162"
+                                                ng-model="vm.model.B162" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Longatto-Filho, 2015</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E162"
+                                            ng-model="vm.model.E162" format="number" digits="1" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end"></td>
+                                    <td>
+                                        <span class="h5 text-center">{{vm.model.B163 | number : 1 }}%</span>
+                                    </td>
+                                    <td colspan="100"><span ng-show="vm.model.B163!=100" class="text-danger">Atenção:
+                                            verifique dados, total deve ser 100%</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Negativo <br />para ASC-US</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B164"
+                                                ng-model="vm.model.B164" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Premissa: igual CC</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E164"
+                                            ng-model="vm.model.E164" format="number" digits="0" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo <br />para ASC-US +</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B165"
+                                                ng-model="vm.model.B165" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Premissa: igual CC</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Colposcopia</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table><br />
+                            <h6 class="text-center mx-auto">Taxa de progressão (%) - NIC e câncer:</h6>
+                            <table class="table table-borderless table-sm align-middle mx-auto w-50">
+                                <tr>
+                                    <td class="text-center">Falso negativo</td>
+                                    <td class="text-center strong">NIC</td>
+                                    <td class="text-center strong">Câncer</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center border-1">{{vm.model.B173.toFixed(0)}}</td>
+                                    <td class="text-center border-1">{{vm.model.C173.toFixed(0)}}</td>
+                                    <td class="text-center">T=0</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center border-1">{{vm.model.B174 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C174 | number : 5}}</td>
+                                    <td class="text-center">T=1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center border-1">{{vm.model.B175 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C175 | number : 5}}</td>
+                                    <td class="text-center">T=2</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center border-1">{{vm.model.B176 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C176 | number : 5}}</td>
+                                    <td class="text-center">T=3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center border-1">{{vm.model.B177 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C177 | number : 5}}</td>
+                                    <td class="text-center">T=4</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">6</td>
+                                    <td class="text-center border-1">{{vm.model.B178 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C178 | number : 5}}</td>
+                                    <td class="text-center">T=5</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col px-1 justify-content-center">
+                            <h6 class="text-center mx-auto">Rastreio primário OnClarity</h6>
+                            <table class="table table-borderless table-sm align-middle" style="font-size: .7rem">
+                                <tr>
+                                    <td class="text-end">Negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B78"
+                                                ng-model="vm.model.B78" digits="2" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Levi, 2019</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E78"
+                                            ng-model="vm.model.E78" format="number" digits="0" size="2"></td>
+                                    <td>ano</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Verdadeiro negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B79"
+                                                ng-model="vm.model.B79" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Levi, 2019</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Falso negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B80"
+                                                ng-model="vm.model.B80" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo - Muito Alto Risco</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B81"
+                                                ng-model="vm.model.B81" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Levi, 2019</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Colposcopia</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo - Alto Risco</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B82"
+                                                ng-model="vm.model.B82" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Levi, 2019</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end">Retorno em</td>
+                                    <td><input type="text" class="form-control form-control-sm" id="E82"
+                                            ng-model="vm.model.E82" format="number" digits="1" size="2"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">Positivo - Risco Intermediário <br />- conduta: CML</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B83"
+                                                ng-model="vm.model.B83" format="number" size="6">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Levi, 2019</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">CML - Negativo</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B84"
+                                                ng-model="vm.model.B84" format="number" digit="2" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">CML - Positivo <br />para ASC-US</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B85"
+                                                ng-model="vm.model.B85" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end">CML - Positivo <br />para ASC-H+</td>
+                                    <td>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-sm" id="B86"
+                                                ng-model="vm.model.B86" format="number" size="6" readonly>
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </td>
+                                    <td>Franco, 1999</td>
+                                    <td>&nbsp;</td>
+                                    <td class="text-end"></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-end"></td>
+                                    <td>
+                                        <span class="h5 text-center">{{ vm.model.B87 }}%</span>
+                                    </td>
+                                    <td colspan="100"><span ng-show="Math.round(vm.model.B87) != 100"
+                                            class="text-danger">Atenção: verifique dados, total deve ser 100%</span>
+                                    </td>
+                                </tr>
+                            </table><br />
+                            <h6 class="text-center mx-auto">Taxa de progressão (%) - NIC e câncer:</h6>
+                            <table class="table table-borderless table-sm align-middle mx-auto w-50">
+                                <tr>
+                                    <td class="text-center">Falso negativo</td>
+                                    <td class="text-center strong">NIC</td>
+                                    <td class="text-center strong">Câncer</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="text-center border-1">{{vm.model.B97.toFixed(0)}}</td>
+                                    <td class="text-center border-1">{{vm.model.C97.toFixed(0)}}</td>
+                                    <td class="text-center">T=0</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="text-center border-1">{{vm.model.B98 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C98 | number : 5}}</td>
+                                    <td class="text-center">T=1</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td class="text-center border-1">{{vm.model.B99 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C99 | number : 5}}</td>
+                                    <td class="text-center">T=2</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td class="text-center border-1">{{vm.model.B100 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C100 | number : 5}}</td>
+                                    <td class="text-center">T=3</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">5</td>
+                                    <td class="text-center border-1">{{vm.model.B101 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C101 | number : 5}}</td>
+                                    <td class="text-center">T=4</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">6</td>
+                                    <td class="text-center border-1">{{vm.model.B102 | number : 5}}</td>
+                                    <td class="text-center border-1">{{vm.model.C102 | number : 5}}</td>
+                                    <td class="text-center">T=5</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row-cols text-end">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <script src="./assets/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./assets/angular-locale_pt-br.js"></script>
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

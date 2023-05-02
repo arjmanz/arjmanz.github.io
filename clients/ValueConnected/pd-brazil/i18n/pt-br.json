@@ -1,0 +1,12 @@
+{
+    "LABELS": {
+        "B2": "Número de leitos MedSurg com funcionários",
+        "B5": "LOS de UTI adicional devido a PPC",
+        "B8": "Custo variável direto por dia"
+    },
+    "REFERENCES": {
+        "1": "Indicadores hospitalares ANAHP. Núcleo de Estudos e Análises, Agosto 2022.",
+        "2": "Amaro, MLM. Registros de deterioração clínica antes e depois da implantação de um sistema informatizado de alerta. Dissertação Mestrado. Programa de Pós-Graduação em Enfermagem. Universidade Federal do Paraná, 2019.",
+        "3": "Gonçales PDS, et al. Reduced frequency of cardiopulmonary arrests by rapid response teams. Einstein. 2012;10(4):442-8,"
+    }
+}

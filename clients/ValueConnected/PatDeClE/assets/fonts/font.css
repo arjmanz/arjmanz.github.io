@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: italic;
+  font-weight: 300;
+  /* IE6-8 compat */
+  src: url("labgrotesque-04a13b8285c4f73635b0ed0432971ecac7ad93bf.eot");
+  src: local("Lab Grotesque Light Italic"), 
+    local("LabGrotesque-LightItalic"), 
+    url("labgrotesque-13c32f61f6a5b2f1f24e32af1a736afdc0b52306.woff") format("woff"), 
+    url("labgrotesque-04a13b8285c4f73635b0ed0432971ecac7ad93bf.eot") format("embedded-opentype"), 
+    url("labgrotesque-96abf5c5ae7395f165205a4a8046dc721d2eadd7.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: italic;
+  font-weight: 500;
+  /* IE6-8 compat */
+  src: url("labgrotesque-b69781ed3a808495b6e705ffaece0ccd62c30cf6.eot");
+  src: local("Lab Grotesque Medium Italic"), 
+    local("LabGrotesque-MediumItalic"), 
+    url("labgrotesque-d0195a08bb6f0fd9f21b00a5f1a55c16d821ba0f.woff") format("woff"), 
+    url("labgrotesque-b69781ed3a808495b6e705ffaece0ccd62c30cf6.eot") format("embedded-opentype"), 
+    url("labgrotesque-6654cfbee148a53fb1ff8c25662d7a334bd8a0c8.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: italic;
+  font-weight: 900;
+  /* IE6-8 compat */
+  src: url("labgrotesque-51d43a430cbb26962211df75a2cd689ad846d5db.eot");
+  src: local("Lab Grotesque Black Italic"), 
+    local("LabGrotesque-BlackItalic"), 
+    url("labgrotesque-2f3a3e4c341ad6aaf16c58082c8a234db03c68ff.woff") format("woff"), 
+    url("labgrotesque-51d43a430cbb26962211df75a2cd689ad846d5db.eot") format("embedded-opentype"), 
+    url("labgrotesque-f48ec008187d169beb100b151eb8ebd965421cd3.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: italic;
+  font-weight: bold;
+  /* IE6-8 compat */
+  src: url("labgrotesque-35167c7ae3d8d11c94a004f67dee9ec38ca1275a.eot");
+  src: local("Lab Grotesque Bold Italic"), 
+    local("LabGrotesque-BoldItalic"), 
+    url("labgrotesque-16ad77e3b047855aa100fbd00736364268b1fd2a.woff") format("woff"), 
+    url("labgrotesque-35167c7ae3d8d11c94a004f67dee9ec38ca1275a.eot") format("embedded-opentype"), 
+    url("labgrotesque-e78d86430af64088e5396657ee66553e61c40c07.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: italic;
+  font-weight: normal;
+  /* IE6-8 compat */
+  src: url("labgrotesque-9720c4b66669615506c0954116e0f48b099079d9.eot");
+  src: local("Lab Grotesque Italic"), 
+    local("LabGrotesque-Italic"), 
+    url("labgrotesque-48e56d47bf5e52e3dfa8783b124a80955ee2480e.woff") format("woff"), 
+    url("labgrotesque-9720c4b66669615506c0954116e0f48b099079d9.eot") format("embedded-opentype"), 
+    url("labgrotesque-a0f29632273d28c1cf0a3842b29bc77b7d8dee05.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: normal;
+  font-weight: 300;
+  /* IE6-8 compat */
+  src: url("labgrotesque-175773f2c647b5f1db4927f99ac64939583971c3.eot");
+  src: local("Lab Grotesque Light"), 
+    local("LabGrotesque-Light"), 
+    url("labgrotesque-5f8cdd079a74551777703fbf9d9b83583beaf89b.woff") format("woff"), 
+    url("labgrotesque-175773f2c647b5f1db4927f99ac64939583971c3.eot") format("embedded-opentype"), 
+    url("labgrotesque-7d98413c59cc86068bc996252abe241da4351e68.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: normal;
+  font-weight: 500;
+  /* IE6-8 compat */
+  src: url("labgrotesque-c7ae04609d11e3e4036166b889916845ec57f37a.eot");
+  src: local("Lab Grotesque Medium"), 
+    local("LabGrotesque-Medium"), 
+    url("labgrotesque-de31652c2b8ae0faf0084feab98edc3ffb24ef30.woff") format("woff"), 
+    url("labgrotesque-c7ae04609d11e3e4036166b889916845ec57f37a.eot") format("embedded-opentype"), 
+    url("labgrotesque-5deacbc15f197793494cdff72f75b3b78136ee79.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: normal;
+  font-weight: 900;
+  /* IE6-8 compat */
+  src: url("labgrotesque-487dfd657755fa8af90f05d22075fdd3bf199ce6.eot");
+  src: local("Lab Grotesque Black"), 
+    local("LabGrotesque-Black"), 
+    url("labgrotesque-464050d6acdc6f4e258d7b3286a7d527c05299fd.woff") format("woff"), 
+    url("labgrotesque-487dfd657755fa8af90f05d22075fdd3bf199ce6.eot") format("embedded-opentype"), 
+    url("labgrotesque-16e3eb4151f62a4f7633a05cd165cf28a829a3cc.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: normal;
+  font-weight: bold;
+  /* IE6-8 compat */
+  src: url("labgrotesque-f5783d7fd50974d0f36aa3e1751779594f5fcc56.eot");
+  src: local("Lab Grotesque Bold"), 
+    local("LabGrotesque-Bold"), 
+    url("labgrotesque-f806d83d4df3c405c3684ebc853290e857f21421.woff") format("woff"), 
+    url("labgrotesque-f5783d7fd50974d0f36aa3e1751779594f5fcc56.eot") format("embedded-opentype"), 
+    url("labgrotesque-4a3417decf1af3a348941140872ccb72eda64c13.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  font-style: normal;
+  font-weight: normal;
+  /* IE6-8 compat */
+  src: url("labgrotesque-3d0f590920745c1bf7e966007dd8e3c7826e69ed.eot");
+  src: local("Lab Grotesque Regular"), 
+    local("LabGrotesque-Regular"), 
+    url("labgrotesque-770518416e664cf3ebbdd73bccf89d79c7839d72.woff") format("woff"), 
+    url("labgrotesque-3d0f590920745c1bf7e966007dd8e3c7826e69ed.eot") format("embedded-opentype"), 
+    url("labgrotesque-3e9252c2ad52cb4041673e8e856837e2ffa72072.ttf") format("truetype");
+}
+

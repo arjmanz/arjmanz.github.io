@@ -1,0 +1,37 @@
+{
+    "GLOBAL": {
+        "PageTitle": "MedSurg Patient Deterioration Burden Calculator Brazil",
+        "Title": "MedSurg Patient Deterioration Burden Calculator Brazil",
+        "CurrencySymbol": "R$"
+    },
+    "LABELS": {
+        "B2": "Average number of <br>staffed MedSurg beds",
+        "B3": "Occupancy rate&nbsp;(%)&nbsp;<sup>1</sup>",
+        "B4": "Patient deterioration rate&nbsp;(%)&nbsp;<sup>4</sup>",
+        "B5": "Average hospital LOS &nbsp;<sup>1</sup>",
+        "B6": "Average ICU LOS &nbsp;<sup>1</sup>",
+        "B9": "MedSurg Direct <br> Variable Cost per day &nbsp;<sup>2</sup>",
+        "B10": "Average ICU Direct <br>Variable Cost per day&nbsp;<sup>3</sup>",
+        "B11": "",
+        "B13": "Increased LOS directly due to patient deterioration&nbsp;(days)&nbsp;<sup>5</sup>",
+        "B15": "Unplanned ICU transfer rate due to patient deterioration&nbsp;<sup>4</sup>",
+        "B16": "",
+        "H23": "Estimated increased LOS days due to <br/>Patient Deterioration",
+        "D22": "Annual Patient Deterioration <br/>Direct Costs",
+        "B19": "Increased Annual LOS due to Patient Deterioration",
+        "B21": "Projected Annual Rate of MedSurg Code Blues",
+        "DisclaimerTitle": "Disclaimer",
+        "DisclaimerText": "This calculator is intended to be used only for the purpose of assessing and demonstrating potential cost savings ranges under normalized hospital cost conditions. The results and outcomes are estimations only and should not be interpreted as a guarantee or warranty of similar results. It does not suggest a definitive review of actual costs and savings incurred in a hospital. Savings are estimates only and specific to the individual case. Savings may not be typical and may vary.",
+        "ReferencesTitle": "References"
+    },
+    "REFERENCES": {
+        "1": "(1) Observatório ANAHP 2022",
+        "2": "(2) 2014 costs: USD 233.33 exchanged into Brazilian Reais; Kiffer, CRV et al. Exploratory model for estimating occupation-day costs associated to Hospital Related Infections based on data from national prevalence project: IRAS Brasil Project. Journal of Infecction Control, 2015",
+        "3": "(3) 2014 costs: USD 1,075.56 exchanges into Brazilian Reais; Kiffer, CRV et al. Exploratory model for estimating occupation-day costs associated to Hospital Related Infections based on data from national prevalence project: IRAS Brasil Project. Journal of Infecction Control, 2015",
+        "4": "(4) \"MONTENEGRO, S. M. S. L.; MIRANDA, C. H. Avaliação do desempenho do escore de alerta precoce modificado em hospital público brasileiro. Rev. Bras. Enferm. v. 72, n. 6, p. 1428- 1434, dez. 2019.\"",
+        "5": "(5) Gaspari et al. Predictors of prolonged hospital stay in a Comprehensive Stroke Unit. Rev. Latino-Am. Enfermagem 2019;27:e3197 (calculated as average LOS of stroke patients with complications minus the average LOS of stroke patients without complications)",
+        "6": "",
+        "7": "",
+        "8": ""
+    }
+}
